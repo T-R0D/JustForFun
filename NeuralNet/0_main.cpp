@@ -1,4 +1,4 @@
-#include "neural_network.hpp"
+#include "connected_feed_forward_neural_network.hpp"
 
 #include <vector>
 
@@ -7,6 +7,7 @@ typedef struct {
   std::vector<double> targets;
 } TestCase;
 
+// All possible cases of the XOR function
 std::vector<TestCase> test_cases = {
   {{0.0, 0.0}, {0.0}},
   {{0.0, 1.0}, {1.0}},
@@ -18,13 +19,13 @@ TestCase
 generateXorTestCase();
 
 bool
-PerformRoundOfTraining(NeuralNetwork& test_network);
+PerformRoundOfTraining(ConnectedFeedForwardNeuralNetwork& test_network);
 
 void
 ViewNetworkAfterInputs();
 
 int main(int argc, char** argv) {
-  NeuralNetwork test_network(
+  ConnectedFeedForwardNeuralNetwork test_network(
     {2, 4, 1},
     0.2, // eta
     0.2  // alpha
@@ -68,7 +69,7 @@ generateXorTestCase() {
 }
 
 bool
-PerformRoundOfTraining(NeuralNetwork& test_network) {
+PerformRoundOfTraining(ConnectedFeedForwardNeuralNetwork& test_network) {
   for (TestCase& test_case : test_cases) {
     test_network.TrainOnInput({test_case.inputs}, {test_case.targets});
   }
@@ -99,7 +100,7 @@ PerformRoundOfTraining(NeuralNetwork& test_network) {
 
 void
 ViewNetworkAfterInputs() {
-  NeuralNetwork test_network(
+  ConnectedFeedForwardNeuralNetwork test_network(
     {2, 4, 1},
     0.2, // eta
     0.5  // alpha

@@ -152,8 +152,10 @@ Neuron::UpdateInputWeights(
 
 double
 Neuron::GenerateRandomWeight() {
-  return 0.3 + ((double) (rand() % 5) / 10.0); 
-  //((rand() / 2.0) + 1.0) / (double) RAND_MAX;
+  return 0.3 + ((double) (rand() % 5) / 10.0); // simple, easy on eyes for
+                                               // debugging 
+  // It is very necessary to have weights that differ so that back-propagation
+  // can have somewhere to assign error to
 }
 
 #endif //_NEURON_CPP_

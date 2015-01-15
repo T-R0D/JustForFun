@@ -1,12 +1,12 @@
-#ifndef _NEURAL_NETWORK_CPP_
-#define _NEURAL_NETWORK_CPP_ 1
+#ifndef _CONNECTED_FEED_FORWARD_NEURAL_NETWORK_CPP_
+#define _CONNECTED_FEED_FORWARD_NEURAL_NETWORK_CPP_ 1
 
-#include "neural_network.hpp"
+#include "connected_feed_forward_neural_network.hpp"
 
 #include <cassert>
 #include <cmath>
 
-NeuralNetwork::NeuralNetwork(
+ConnectedFeedForwardNeuralNetwork::ConnectedFeedForwardNeuralNetwork(
   const std::vector<unsigned>& topology,
   const double learning_rate,
   const double momentum)
@@ -32,7 +32,7 @@ NeuralNetwork::NeuralNetwork(
         previous_layer_size,
         [] (const double x) -> double {return tanh(x);},
         [] (const double x) -> double {return (1.0 - (x * x));}
-        // [] (const double x) -> double {return x;},
+        // [] (const double x) -> double {return x;}, // for testing
         // [] (const double x) -> double {return 1.0;}
       ));
     }
@@ -41,7 +41,7 @@ NeuralNetwork::NeuralNetwork(
 }
 
 void
-NeuralNetwork::ApplyInputs(const std::vector<double>& inputs) {
+ConnectedFeedForwardNeuralNetwork::ApplyInputs(const std::vector<double>& inputs) {
   NeuronLayer& input_layer = network_layers_.front();
   unsigned input_dim = input_layer.size();
 
@@ -55,7 +55,7 @@ NeuralNetwork::ApplyInputs(const std::vector<double>& inputs) {
 }
 
 std::vector<double>
-NeuralNetwork::CollectOutputs() const {
+ConnectedFeedForwardNeuralNetwork::CollectOutputs() const {
   const NeuronLayer& output_layer = network_layers_.back();
 
   std::vector<double> outputs(output_layer.size());
@@ -67,7 +67,7 @@ NeuralNetwork::CollectOutputs() const {
 }
 
 void
-NeuralNetwork::TrainOnInput(
+ConnectedFeedForwardNeuralNetwork::TrainOnInput(
   const std::vector<std::vector<double>>& input_set,
   const std::vector<std::vector<double>>& target_set) {
 
@@ -79,7 +79,7 @@ NeuralNetwork::TrainOnInput(
 }
 
 std::string
-NeuralNetwork::toString() const {
+ConnectedFeedForwardNeuralNetwork::toString() const {
   std::string to_string = "";
   char dummy[200];
 
@@ -98,7 +98,7 @@ NeuralNetwork::toString() const {
 }
 
 void
-NeuralNetwork::FeedForward() {
+ConnectedFeedForwardNeuralNetwork::FeedForward() {
   for (unsigned i = 1; i < network_layers_.size(); ++i) {
     NeuronLayer& previous_layer = network_layers_[i - 1];
     NeuronLayer& current_layer = network_layers_[i];
@@ -115,7 +115,7 @@ NeuralNetwork::FeedForward() {
 }
 
 void
-NeuralNetwork::BackPropogateError(const std::vector<double>& targets) {
+ConnectedFeedForwardNeuralNetwork::BackPropogateError(const std::vector<double>& targets) {
   NeuronLayer& output_layer = network_layers_.back();
 
   for (unsigned j = 0; j < output_layer.size(); ++j) {
@@ -145,4 +145,4 @@ NeuralNetwork::BackPropogateError(const std::vector<double>& targets) {
   }
 }
 
-#endif //_NEURAL_NETWORK_CPP_
+#endif //_CONNECTED_FEED_FORWARD_NEURAL_NETWORK_CPP_
