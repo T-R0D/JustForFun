@@ -1,0 +1,9 @@
+[package]
+name = "st_petersburg_paradox"
+version = "0.1.0"
+authors = ["t"]
+
+[dependencies]
+argparse = "*"
+rand = "0.3"
+hyper = "*"
