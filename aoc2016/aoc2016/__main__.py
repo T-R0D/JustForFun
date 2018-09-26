@@ -21,7 +21,11 @@ from aoc2016.common import read_data
 # from aoc2016.day06 import solution
 # from aoc2016.day07 import solution
 # from aoc2016.day08 import solution
-from aoc2016.day09 import solution
+# from aoc2016.day09 import solution
+# from aoc2016.day10 import solution
+# from aoc2016.day11 import solution
+# from aoc2016.day12 import solution
+from aoc2016.day13 import solution
 
 
 def main():
@@ -58,7 +62,23 @@ def main():
     # print(solution.part_one(puzzle_input))
     # print(solution.part_two(puzzle_input))
 
-    puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Desktop/aoc2016/aoc2016/day09/puzzle_input.txt')
+    # puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Desktop/aoc2016/aoc2016/day09/puzzle_input.txt')
+    # print(solution.part_one(puzzle_input))
+    # print(solution.part_two(puzzle_input))
+
+    # puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Documents/GitHub/JustForFun/aoc2016/aoc2016/day10/puzzle_input.txt')
+    # print(solution.part_one(puzzle_input))
+    # print(solution.part_two(puzzle_input))
+
+    # puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Documents/GitHub/JustForFun/aoc2016/aoc2016/day11/puzzle_input.txt')
+    # print(solution.part_one(puzzle_input))
+    # print(solution.part_two(puzzle_input))
+
+    # puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Documents/GitHub/JustForFun/aoc2016/aoc2016/day12/puzzle_input.txt')
+    # print(solution.part_one(puzzle_input))
+    # print(solution.part_two(puzzle_input))
+
+    puzzle_input = read_data.read_puzzle_input('C:/Users/Terence/Documents/GitHub/JustForFun/aoc2016/aoc2016/day13/puzzle_input.txt')
     print(solution.part_one(puzzle_input))
     print(solution.part_two(puzzle_input))
 
