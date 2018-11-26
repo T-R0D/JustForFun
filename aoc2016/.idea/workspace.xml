@@ -25,77 +25,113 @@
         <entry file="file://$PROJECT_DIR$/aoc2016/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
+              <caret line="96" column="2" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="2" />
               <folding>
-                <element signature="e#1188#3959#0" expanded="true" />
+                <marker date="1543191968703" expanded="true" signature="1294:4751" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aoc2016/day13/problem_statement.txt">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day14/problem_statement.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aoc2016/day13/solution.py">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day14/solution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+              <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
               <folding>
-                <element signature="e#704#855#0" expanded="true" />
-                <element signature="e#1089#1113#0" expanded="true" />
-                <element signature="e#1198#1340#0" expanded="true" />
-                <element signature="e#1384#2407#0" expanded="true" />
-                <element signature="e#2472#3774#0" expanded="true" />
-                <element signature="e#2627#2723#0" expanded="true" />
-                <element signature="e#3833#4200#0" expanded="true" />
-                <element signature="e#4239#4358#0" expanded="true" />
-                <element signature="e#4410#4485#0" expanded="true" />
-                <element signature="e#4524#4639#0" expanded="true" />
+                <element signature="e#658#676#0" expanded="true" />
+                <element signature="e#726#826#0" expanded="true" />
+                <element signature="e#861#1123#0" expanded="true" />
+                <element signature="e#895#995#0" expanded="true" />
+                <element signature="e#1155#1230#0" expanded="true" />
+                <element signature="e#1320#1446#0" expanded="true" />
+                <element signature="e#2305#2517#0" expanded="true" />
+                <element signature="e#2590#2594#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/aoc2016/day13/test/test_solution.py">
+      <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day14/test/test_solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9649485">
-              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
               <folding>
                 <element signature="e#658#673#0" expanded="true" />
+                <element signature="e#802#806#0" expanded="true" />
                 <element signature="e#840#844#0" expanded="true" />
-                <element signature="e#878#882#0" expanded="true" />
-                <element signature="e#923#1474#0" expanded="true" />
-                <element signature="e#1519#1639#0" expanded="true" />
+                <element signature="e#879#1114#0" expanded="true" />
+                <element signature="e#1152#1846#0" expanded="true" />
+                <element signature="e#1885#2252#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="puzzle_input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aoc2016/day13/puzzle_input.txt">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day16/puzzle_input.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="problem.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aoc2016/day12/problem.txt">
+      <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day16/problem_statement.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day16/test/test_solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#797#801#0" expanded="true" />
+                <element signature="e#835#839#0" expanded="true" />
+                <element signature="e#1431#1553#0" expanded="true" />
+                <marker date="1543191871160" expanded="true" signature="658:729" placeholder="import ..." />
+                <marker date="1543191871160" expanded="true" signature="767:1795" placeholder="..." />
+                <marker date="1543191871160" expanded="true" signature="868:1392" placeholder="..." />
+                <marker date="1543191871160" expanded="true" signature="1583:1795" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/aoc2016/day16/solution.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47316104">
+              <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+              <folding>
+                <element signature="e#690#812#0" expanded="true" />
+                <element signature="e#1065#1130#0" expanded="true" />
+                <element signature="e#1179#1323#0" expanded="true" />
+                <element signature="e#1357#1373#0" expanded="true" />
+                <element signature="e#1411#1458#0" expanded="true" />
+                <element signature="e#1492#1513#0" expanded="true" />
+                <element signature="e#1561#1667#0" expanded="true" />
+                <element signature="e#1719#1930#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,18 +148,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/aoc2016/day03/test/test_solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day03/solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day04/puzzle_input.txt" />
-        <option value="$PROJECT_DIR$/aoc2016/day04/problem.txt" />
-        <option value="$PROJECT_DIR$/aoc2016/day03/problem.txt" />
-        <option value="$PROJECT_DIR$/aoc2016/day04/solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day04/test/test_solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day05/test/test.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day05/puzzle_input.txt" />
-        <option value="$PROJECT_DIR$/aoc2016/day05/test/test_solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day05/solution.py" />
-        <option value="$PROJECT_DIR$/aoc2016/day05/problem.txt" />
         <option value="$PROJECT_DIR$/aoc2016/day06/puzzle_input.txt" />
         <option value="$PROJECT_DIR$/aoc2016/day06/test/test_solution.py" />
         <option value="$PROJECT_DIR$/aoc2016/day06/solution.py" />
@@ -160,17 +184,29 @@
         <option value="$PROJECT_DIR$/aoc2016/day12/solution.py" />
         <option value="$PROJECT_DIR$/aoc2016/day13/puzzle_input.txt" />
         <option value="$PROJECT_DIR$/aoc2016/day13/problem_statement.txt" />
-        <option value="$PROJECT_DIR$/aoc2016/__main__.py" />
         <option value="$PROJECT_DIR$/aoc2016/day13/test/test_solution.py" />
         <option value="$PROJECT_DIR$/aoc2016/day13/solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day14/puzzle_input.txt" />
+        <option value="$PROJECT_DIR$/aoc2016/day14/test/test_solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/common/decorators.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day14/solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day14/problem_statement.txt" />
+        <option value="$PROJECT_DIR$/aoc2016/day15/puzzle_input.txt" />
+        <option value="$PROJECT_DIR$/aoc2016/day15/test/test_solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day15/problem_statement.txt" />
+        <option value="$PROJECT_DIR$/aoc2016/day15/solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day16/test/test_solution.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day16/puzzle_input.txt" />
+        <option value="$PROJECT_DIR$/aoc2016/__main__.py" />
+        <option value="$PROJECT_DIR$/aoc2016/day16/solution.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
-    <option name="y" value="1" />
-    <option name="width" value="1598" />
-    <option name="height" value="868" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1616" />
+    <option name="height" value="886" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -249,7 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="day13" />
+              <option name="myItemId" value="day16" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -267,7 +303,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="day13" />
+              <option name="myItemId" value="day16" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -289,7 +325,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="day14" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2016" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day14" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -306,32 +364,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Terence\Documents\GitHub\JustForFun\aoc2016\aoc2016\day14" />
       <recent name="C:\Users\Terence\Documents\GitHub\JustForFun\aoc2016\aoc2016\day12\test" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittest TestSolution.test_find_highest_coverage">
-    <configuration default="false" name="Unittest TestSolution.test_part_one" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day12/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aoc2016" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day12/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestSolution" />
-      <option name="METHOD_NAME" value="test_part_one" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.__main__">
     <configuration default="false" name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,19 +386,19 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestSolution.test_count_bits" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestDay16.test_checksum" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day13/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day16/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2016" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day13/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestSolution" />
-      <option name="METHOD_NAME" value="test_count_bits" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day16/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay16" />
+      <option name="METHOD_NAME" value="test_checksum" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -371,19 +408,19 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestSolution.test_find_exit_path" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestDay16.test_iterate" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day13/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day16/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2016" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day13/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestSolution" />
-      <option name="METHOD_NAME" value="test_find_exit_path" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day16/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay16" />
+      <option name="METHOD_NAME" value="test_iterate" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -393,21 +430,43 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestSolution.test_find_highest_coverage" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestDay16.test_part_one" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day13/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day16/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2016" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day13/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestSolution" />
-      <option name="METHOD_NAME" value="test_find_highest_coverage" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day16/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay16" />
+      <option name="METHOD_NAME" value="test_part_one" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_solution" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/aoc2016/day16/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aoc2016" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/aoc2016/day16/test/test_solution.py" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
@@ -538,19 +597,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_part_one" />
-      <item index="1" class="java.lang.String" itemvalue="Python.__main__" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_count_bits" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_find_exit_path" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_find_highest_coverage" />
+      <item index="0" class="java.lang.String" itemvalue="Python.__main__" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_checksum" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_iterate" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_part_one" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_solution" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_find_highest_coverage" />
-        <item index="1" class="java.lang.String" itemvalue="Python.__main__" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_find_exit_path" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_count_bits" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestSolution.test_part_one" />
+        <item index="0" class="java.lang.String" itemvalue="Python.__main__" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_solution" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_part_one" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_iterate" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestDay16.test_checksum" />
       </list>
     </recent_temporary>
   </component>
@@ -568,57 +627,57 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestSolution_test_find_exit_path - 2018.09.21 at 00h 02m 09s.xml">
-      <configuration name="Unittest TestSolution.test_find_exit_path" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 25m 57s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_exit_path - 2018.09.21 at 00h 02m 21s.xml">
-      <configuration name="Unittest TestSolution.test_find_exit_path" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 30m 34s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_exit_path - 2018.09.21 at 00h 07m 59s.xml">
-      <configuration name="Unittest TestSolution.test_find_exit_path" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 31m 04s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_exit_path - 2018.09.21 at 00h 08m 32s.xml">
-      <configuration name="Unittest TestSolution.test_find_exit_path" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 31m 16s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 07h 11m 05s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 31m 48s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 07h 11m 21s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 32m 07s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 07h 12m 46s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.18 at 19h 32m 15s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 07h 13m 06s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_iterate - 2018.11.25 at 16h 20m 54s.xml">
+      <configuration name="Unittest TestDay16.test_iterate" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 07h 13m 16s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittest_TestDay16_test_part_one - 2018.11.25 at 16h 21m 00s.xml">
+      <configuration name="Unittest TestDay16.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestSolution_test_find_highest_coverage - 2018.09.23 at 17h 25m 39s.xml">
-      <configuration name="Unittest TestSolution.test_find_highest_coverage" configurationId="tests" />
+    <history-entry file="Unittests_in_test_solution - 2018.11.25 at 16h 25m 05s.xml">
+      <configuration name="Unittests in test_solution" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="1" width="1598" height="868" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24778761" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19625" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3285151" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32092425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3981603" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3979461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -635,102 +694,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/aoc2016/day05/problem.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52469134">
-          <caret line="15" column="47" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day05/test/test_solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30041152">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day05/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2654321">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day06/puzzle_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="572" column="0" selection-start-line="572" selection-start-column="0" selection-end-line="572" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day06/test/test_solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day06/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="69" selection-start-line="25" selection-start-column="69" selection-end-line="25" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day06/problem.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="104" selection-start-line="26" selection-start-column="104" selection-end-line="26" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day07/problem.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day07/test/test_solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2655935">
-          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day07/puzzle_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79476863">
-          <caret line="2000" column="0" selection-start-line="2000" selection-start-column="0" selection-end-line="2000" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day07/solution.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3863179">
-          <caret line="51" column="30" selection-start-line="51" selection-start-column="30" selection-end-line="51" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day08/test/test_screen.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day08/puzzle_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aoc2016/day08/screen.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -791,13 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="227" column="5" selection-start-line="227" selection-start-column="0" selection-end-line="227" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python 3.5/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03846154">
-          <caret line="596" column="0" selection-start-line="596" selection-start-column="0" selection-end-line="596" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -875,11 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="27" selection-start-line="64" selection-start-column="27" selection-end-line="64" selection-end-column="27" />
-          <folding>
-            <element signature="e#840#1429#0" expanded="false" />
-            <element signature="e#1584#1588#0" expanded="false" />
-            <element signature="e#1703#2218#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,9 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-          <folding>
-            <element signature="e#735#933#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -913,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,30 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.29690722">
           <caret line="414" column="0" selection-start-line="414" selection-start-column="0" selection-end-line="414" selection-end-column="0" />
-          <folding>
-            <element signature="e#657#668#0" expanded="false" />
-            <element signature="e#809#889#0" expanded="false" />
-            <element signature="e#928#961#0" expanded="false" />
-            <element signature="e#4886#5374#0" expanded="false" />
-            <element signature="e#4927#4970#0" expanded="false" />
-            <element signature="e#5002#5147#0" expanded="false" />
-            <element signature="e#5178#5217#0" expanded="false" />
-            <element signature="e#5250#5324#0" expanded="false" />
-            <element signature="e#5358#5374#0" expanded="false" />
-            <element signature="e#5567#5986#0" expanded="false" />
-            <element signature="e#6020#6583#0" expanded="false" />
-            <element signature="e#6629#7706#0" expanded="false" />
-            <element signature="e#7761#8599#0" expanded="false" />
-            <element signature="e#8656#9498#0" expanded="false" />
-            <element signature="e#9554#10625#0" expanded="false" />
-            <element signature="e#10683#11770#0" expanded="false" />
-            <element signature="e#11840#13078#0" expanded="false" />
-            <element signature="e#13679#13702#0" expanded="false" />
-            <element signature="e#13736#15718#0" expanded="false" />
-            <element signature="e#15945#15949#0" expanded="false" />
-            <element signature="e#15994#16155#0" expanded="false" />
-            <element signature="e#16192#16412#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -952,9 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#657#672#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -962,12 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-          <folding>
-            <element signature="e#658#673#0" expanded="false" />
-            <element signature="e#785#789#0" expanded="false" />
-            <element signature="e#823#827#0" expanded="false" />
-            <element signature="e#1267#1517#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -975,15 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-          <folding>
-            <element signature="e#1643#1902#0" expanded="false" />
-            <element signature="e#1948#1970#0" expanded="false" />
-            <element signature="e#2314#2848#0" expanded="false" />
-            <element signature="e#2889#3062#0" expanded="false" />
-            <element signature="e#3102#3247#0" expanded="false" />
-            <element signature="e#3287#3432#0" expanded="false" />
-            <element signature="e#3621#3751#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -991,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6659794">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,23 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day12/problem.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day13/puzzle_input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1023,57 +913,217 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.3855671">
           <caret line="54" column="36" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day12/problem.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day13/puzzle_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aoc2016/day13/problem_statement.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day13/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="27" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aoc2016/day13/solution.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="45" selection-start-line="27" selection-start-column="45" selection-end-line="27" selection-end-column="45" />
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day14/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
           <folding>
-            <element signature="e#704#855#0" expanded="true" />
-            <element signature="e#1089#1113#0" expanded="true" />
-            <element signature="e#1198#1340#0" expanded="true" />
-            <element signature="e#1384#2407#0" expanded="true" />
-            <element signature="e#2472#3774#0" expanded="true" />
-            <element signature="e#2627#2723#0" expanded="true" />
-            <element signature="e#3833#4200#0" expanded="true" />
-            <element signature="e#4239#4358#0" expanded="true" />
-            <element signature="e#4410#4485#0" expanded="true" />
-            <element signature="e#4524#4639#0" expanded="true" />
+            <element signature="e#658#676#0" expanded="true" />
+            <element signature="e#726#826#0" expanded="true" />
+            <element signature="e#861#1123#0" expanded="true" />
+            <element signature="e#895#995#0" expanded="true" />
+            <element signature="e#1155#1230#0" expanded="true" />
+            <element signature="e#1320#1446#0" expanded="true" />
+            <element signature="e#2305#2517#0" expanded="true" />
+            <element signature="e#2590#2594#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/common/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6421471">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day14/puzzle_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day15/puzzle_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day14/problem_statement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="0" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day15/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="e#1399#1414#0" expanded="false" />
+            <element signature="e#1476#1525#0" expanded="false" />
+            <element signature="e#1564#1590#0" expanded="false" />
+            <element signature="e#1676#1766#0" expanded="false" />
+            <element signature="e#1805#1830#0" expanded="false" />
+            <element signature="e#1880#1922#0" expanded="false" />
+            <element signature="e#1963#1983#0" expanded="false" />
+            <element signature="e#2024#2042#0" expanded="false" />
+            <element signature="e#2093#2291#0" expanded="false" />
+            <element signature="e#2326#2604#0" expanded="false" />
+            <element signature="e#2646#2735#0" expanded="false" />
+            <element signature="e#2772#2820#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day15/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8310139">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#658#673#0" expanded="false" />
+            <element signature="e#786#790#0" expanded="false" />
+            <element signature="e#824#828#0" expanded="false" />
+            <element signature="e#867#1080#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day15/problem_statement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70974153">
+          <caret line="21" column="165" selection-start-line="21" selection-start-column="165" selection-end-line="21" selection-end-column="165" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day14/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+          <folding>
+            <element signature="e#658#673#0" expanded="true" />
+            <element signature="e#802#806#0" expanded="true" />
+            <element signature="e#840#844#0" expanded="true" />
+            <element signature="e#879#1114#0" expanded="true" />
+            <element signature="e#1152#1846#0" expanded="true" />
+            <element signature="e#1885#2252#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Python 3.5/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9616253">
+          <caret line="601" column="0" selection-start-line="601" selection-start-column="0" selection-end-line="601" selection-end-column="0" />
+          <folding>
+            <element signature="e#492#667#2" expanded="false" />
+            <element signature="e#703#740#2" expanded="false" />
+            <element signature="e#783#844#2" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day16/puzzle_input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="4" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aoc2016/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="7" selection-start-line="86" selection-start-column="7" selection-end-line="86" selection-end-column="7" />
+          <caret line="96" column="2" selection-start-line="96" selection-start-column="2" selection-end-line="96" selection-end-column="2" />
           <folding>
-            <element signature="e#1188#3959#0" expanded="true" />
+            <marker date="1543191968703" expanded="true" signature="1294:4751" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aoc2016/day13/test/test_solution.py">
+    <entry file="file://$PROJECT_DIR$/aoc2016/day16/problem_statement.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9649485">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day16/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#658#673#0" expanded="true" />
-            <element signature="e#840#844#0" expanded="true" />
-            <element signature="e#878#882#0" expanded="true" />
-            <element signature="e#923#1474#0" expanded="true" />
-            <element signature="e#1519#1639#0" expanded="true" />
+            <element signature="e#797#801#0" expanded="true" />
+            <element signature="e#835#839#0" expanded="true" />
+            <element signature="e#1431#1553#0" expanded="true" />
+            <marker date="1543191871160" expanded="true" signature="658:729" placeholder="import ..." />
+            <marker date="1543191871160" expanded="true" signature="767:1795" placeholder="..." />
+            <marker date="1543191871160" expanded="true" signature="868:1392" placeholder="..." />
+            <marker date="1543191871160" expanded="true" signature="1583:1795" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aoc2016/day16/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47316104">
+          <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+          <folding>
+            <element signature="e#690#812#0" expanded="true" />
+            <element signature="e#1065#1130#0" expanded="true" />
+            <element signature="e#1179#1323#0" expanded="true" />
+            <element signature="e#1357#1373#0" expanded="true" />
+            <element signature="e#1411#1458#0" expanded="true" />
+            <element signature="e#1492#1513#0" expanded="true" />
+            <element signature="e#1561#1667#0" expanded="true" />
+            <element signature="e#1719#1930#0" expanded="true" />
           </folding>
         </state>
       </provider>

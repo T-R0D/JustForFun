@@ -49,6 +49,5 @@ class TestSolution(unittest.TestCase):
 
     def test_find_highest_coverage(self):
         room = solution.DilbertLand(10, (7, 4))
-        path = room.find_highest_coverage_path(10)
-        print(path)
-        self.assertEqual(9, len(set(path)))
+        covered = room.find_highest_coverage(10)
+        self.assertEqual(18, len(set(covered)))

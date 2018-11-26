@@ -15,6 +15,11 @@
 
 import queue
 
+
+# This one was weird. My code outputs 82 and 115. Some code from the internet
+# that uses the same code to solve both parts outputs 88 and 138. According
+# to the site, the correct answers are 82 and 138. Go figure.
+
 def part_one(puzzle_input):
     designer_number = parse_input(puzzle_input)
     room = DilbertLand(designer_number, (31, 39))
@@ -24,8 +29,8 @@ def part_one(puzzle_input):
 
 def part_two(puzzle_input):
     designer_number = parse_input(puzzle_input)
-    room = DilbertLand(designer_number, (31, 39))
-    path = room.find_highest_coverage_path(50)
+    room = DilbertLand(designer_number, (-1, -1))
+    path = room.find_highest_coverage(50)
     return len(path)
 
 
@@ -68,32 +73,31 @@ class DilbertLand(object):
                     self.paths[x] = ys
                     frontier.append(((x, y), path + [(x, y)]))
 
-    def find_highest_coverage_path(self, path_length):
-        highest_coverage = 0
-        best_path = []
+    def find_highest_coverage(self, path_length):
 
         class CoverageState(object):
-            def __init__(self, position, path, covered):
+            def __init__(self, position, steps_taken):
                 self.position = position
-                self.path = path
-                self.covered = covered
+                self.steps_taken = steps_taken
 
-        frontier = queue.deque([CoverageState((1, 1), [], set())])
+        frontier = queue.deque([CoverageState((1, 1), 0)])
+        explored = set()
 
         while frontier:
             current_state = frontier.pop()
 
-            if len(current_state.path) > path_length:
+            if current_state.steps_taken > path_length or current_state.position in explored:
                 continue
 
-            if len(current_state.covered) > highest_coverage:
-                highest_coverage = len(current_state.covered)
-                best_path = current_state.path
+            explored.add(current_state.position)
 
             next_positions = self.generate_next_positions(current_state.position)
             for position in next_positions:
+                if position in explored:
+                    continue
+
                 x, y = position
-                if (x in self.walls and y in self.walls.get(x, set())):
+                if x in self.walls and y in self.walls.get(x, set()):
                     continue
 
                 if self.is_wall(x, y):
@@ -102,12 +106,10 @@ class DilbertLand(object):
                     self.walls[x] = ys
                     continue
 
-                next_state = CoverageState(
-                    position, current_state.path + [position], current_state.covered | {position})
+                next_state = CoverageState(position, current_state.steps_taken + 1)
                 frontier.append(next_state)
 
-
-        return best_path
+        return explored
 
     def generate_next_positions(self, position):
         x, y = position
