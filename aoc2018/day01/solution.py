@@ -3,6 +3,7 @@ def main():
     print(part_one(puzzle_input))
     print(part_two(puzzle_input))
 
+
 def parse_input():
     changes = []
     with open('input.txt') as f:
@@ -16,6 +17,7 @@ def part_one(puzzle_input):
         acc += x
 
     return str(acc)
+
 
 def part_two(puzzle_input):
     acc = 0
@@ -32,6 +34,7 @@ def part_two(puzzle_input):
             frequencies.add(acc)
 
     return str(first_repeat)
+
 
 if __name__ == '__main__':
     main()

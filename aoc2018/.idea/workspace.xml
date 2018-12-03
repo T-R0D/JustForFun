@@ -21,50 +21,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day01/input.txt">
+      <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/test/test_solution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1029" column="0" selection-start-line="1029" selection-start-column="0" selection-end-line="1029" selection-end-column="0" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day01/solution.py">
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/solution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34274194">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#16#112#0" expanded="true" />
-                <element signature="e#137#245#0" expanded="true" />
-                <element signature="e#280#352#0" expanded="true" />
-                <element signature="e#386#732#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day01/test/test_solution.py">
+      <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day03/input.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#197#445#0" expanded="true" />
-                <element signature="e#484#816#0" expanded="true" />
-              </folding>
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day01/problem_statement.txt">
+      <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day03/problem_statement.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="123" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,7 +71,11 @@
         <option value="$PROJECT_DIR$/day01/input.txt" />
         <option value="$PROJECT_DIR$/day01/problem_statement.txt" />
         <option value="$PROJECT_DIR$/day01/test/test_solution.py" />
+        <option value="$PROJECT_DIR$/day02/input.txt" />
         <option value="$PROJECT_DIR$/day01/solution.py" />
+        <option value="$PROJECT_DIR$/day02/problem_statement.txt" />
+        <option value="$PROJECT_DIR$/day02/solution.py" />
+        <option value="$PROJECT_DIR$/day02/test/test_solution.py" />
       </list>
     </option>
   </component>
@@ -141,7 +138,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="day01" />
+              <option name="myItemId" value="day03" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -155,7 +152,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="day01" />
+              <option name="myItemId" value="day03" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -174,7 +171,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
   </component>
-  <component name="RunManager" selected="Python.solution">
+  <component name="RunManager" selected="Python.solution (1)">
     <configuration default="false" name="solution" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -192,19 +189,58 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestDay01.test_part_two" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittests in TestDay02" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day01/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day02/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day01/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestDay01" />
-      <option name="METHOD_NAME" value="test_part_two" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day02/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay02" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="solution (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aoc2018" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day02/solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestDay02.test_find_difference_in_ids" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day02/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aoc2018" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day02/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay02" />
+      <option name="METHOD_NAME" value="test_find_difference_in_ids" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
       <option name="PATTERN" value="" />
@@ -214,18 +250,18 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestDay01.test_part_two (1)" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestDay02.test_part_two" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day01/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day02/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day01/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestDay01" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day02/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay02" />
       <option name="METHOD_NAME" value="test_part_two" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
@@ -358,16 +394,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.solution" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay01.test_part_two" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay01.test_part_two (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestDay02" />
+      <item index="2" class="java.lang.String" itemvalue="Python.solution (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestDay02.test_find_difference_in_ids" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestDay02.test_part_two" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.solution" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay01.test_part_two (1)" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay01.test_part_two" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.solution (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay02.test_part_two" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay02.test_find_difference_in_ids" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestDay02" />
+        <item index="4" class="java.lang.String" itemvalue="Python.solution" />
       </list>
     </recent_temporary>
   </component>
@@ -385,12 +425,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestDay01_test_part_two - 2018.12.01 at 07h 12m 30s.xml">
-      <configuration name="Unittest TestDay01.test_part_two" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittest_TestDay01_test_part_two - 2018.12.01 at 07h 13m 15s.xml">
-      <configuration name="Unittest TestDay01.test_part_two" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittest_TestDay01_test_part_two - 2018.12.01 at 07h 13m 47s.xml">
       <configuration name="Unittest TestDay01.test_part_two" configurationId="tests" />
     </history-entry>
@@ -408,6 +442,18 @@
     </history-entry>
     <history-entry file="Unittest_TestDay01_test_part_two_(1) - 2018.12.01 at 07h 16m 47s.xml">
       <configuration name="Unittest TestDay01.test_part_two (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestDay02_test_find_difference_in_ids - 2018.12.02 at 22h 26m 20s.xml">
+      <configuration name="Unittest TestDay02.test_find_difference_in_ids" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_TestDay02_test_part_two - 2018.12.02 at 22h 32m 08s.xml">
+      <configuration name="Unittest TestDay02.test_part_two" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestDay02 - 2018.12.02 at 22h 05m 02s.xml">
+      <configuration name="Unittests in TestDay02" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_TestDay02 - 2018.12.02 at 22h 18m 43s.xml">
+      <configuration name="Unittests in TestDay02" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -449,44 +495,121 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day01/input.txt">
+    <entry file="file://$PROJECT_DIR$/day01/test/test_solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1029" column="0" selection-start-line="1029" selection-start-column="0" selection-end-line="1029" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.6854839">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day01/problem_statement.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.07459678">
           <caret line="24" column="123" selection-start-line="24" selection-start-column="123" selection-end-line="24" selection-end-column="123" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day01/test/test_solution.py">
+    <entry file="file://$PROJECT_DIR$/day01/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#197#445#0" expanded="true" />
-            <element signature="e#484#816#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/day01/solution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34274194">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.7258065">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="e#16#112#0" expanded="true" />
-            <element signature="e#137#245#0" expanded="true" />
-            <element signature="e#280#352#0" expanded="true" />
-            <element signature="e#386#732#0" expanded="true" />
+            <element signature="e#138#246#0" expanded="true" />
+            <element signature="e#281#353#0" expanded="true" />
+            <element signature="e#388#734#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day02/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034274194">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding>
+            <element signature="e#37#133#0" expanded="true" />
+            <element signature="e#159#250#0" expanded="true" />
+            <element signature="e#285#527#0" expanded="true" />
+            <element signature="e#562#828#0" expanded="true" />
+            <element signature="e#862#993#0" expanded="true" />
+            <element signature="e#1038#1323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day02/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4516129">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#197#437#0" expanded="true" />
+            <element signature="e#476#711#0" expanded="true" />
+            <element signature="e#755#1608#0" expanded="true" />
+            <element signature="e#1661#1945#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day02/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day02/problem_statement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6572581">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#16#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day03/problem_statement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
