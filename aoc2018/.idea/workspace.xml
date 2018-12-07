@@ -22,52 +22,52 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="test_solution.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day04/test/test_solution.py">
+        <entry file="file://$PROJECT_DIR$/day05/test/test_solution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="18" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#197#1178#0" expanded="true" />
-                <element signature="e#1217#2199#0" expanded="true" />
+                <element signature="e#197#448#0" expanded="true" />
+                <element signature="e#487#547#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solution.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day04/solution.py">
+      <file leaf-file-name="solution.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day05/solution.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#53#149#0" expanded="true" />
-                <element signature="e#175#509#0" expanded="true" />
-                <element signature="e#430#443#0" expanded="true" />
-                <element signature="e#544#2035#0" expanded="true" />
-                <element signature="e#2069#3628#0" expanded="true" />
-                <element signature="e#3674#3760#0" expanded="true" />
+                <element signature="e#16#112#0" expanded="true" />
+                <element signature="e#138#229#0" expanded="true" />
+                <element signature="e#263#334#0" expanded="true" />
+                <element signature="e#369#958#0" expanded="true" />
+                <element signature="e#1009#1310#0" expanded="true" />
+                <element signature="e#1346#1841#0" expanded="true" />
+                <element signature="e#1886#1955#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day04/problem_statement.txt">
+      <file leaf-file-name="problem_statement.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day05/problem_statement.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="132" selection-start-line="48" selection-start-column="132" selection-end-line="48" selection-end-column="132" />
+            <state vertical-scroll-proportion="0.828629">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day04/input.txt">
+        <entry file="file://$PROJECT_DIR$/day05/input.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1056" column="31" selection-start-line="1056" selection-start-column="31" selection-end-line="1056" selection-end-column="31" />
+              <caret line="0" column="47949" selection-start-line="0" selection-start-column="47949" selection-end-line="0" selection-end-column="47949" />
               <folding />
             </state>
           </provider>
@@ -94,11 +94,15 @@
         <option value="$PROJECT_DIR$/day04/problem_statement.txt" />
         <option value="$PROJECT_DIR$/day04/test/test_solution.py" />
         <option value="$PROJECT_DIR$/day04/solution.py" />
+        <option value="$PROJECT_DIR$/day05/input.txt" />
+        <option value="$PROJECT_DIR$/day05/solution.py" />
+        <option value="$PROJECT_DIR$/day05/test/test_solution.py" />
+        <option value="$PROJECT_DIR$/day05/problem_statement.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
+    <option name="x" value="-11" />
     <option name="width" value="1612" />
     <option name="height" value="886" />
   </component>
@@ -156,6 +160,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="day05" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="day05" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="aoc2018" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="day04" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -189,46 +225,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
   </component>
-  <component name="RunManager" selected="Python.solution">
-    <configuration default="false" name="solution (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day03" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day03/solution.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestDay03.test_part_two" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day03/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day03/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestDay03" />
-      <option name="METHOD_NAME" value="test_part_two" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.solution (1)">
     <configuration default="false" name="solution" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -246,18 +243,57 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestDay04.test_part_one" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="solution (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day04/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day05" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day04/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestDay04" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day05/solution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in TestDay05" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day05/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aoc2018" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day05/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay05" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_CLASS" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest TestDay05.test_part_one" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day05/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="aoc2018" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day05/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay05" />
       <option name="METHOD_NAME" value="test_part_one" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
@@ -268,18 +304,18 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittest TestDay04.test_part_two" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="Unittest TestDay05.test_part_two" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day04/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day05/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="aoc2018" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day04/test/test_solution.py" />
-      <option name="CLASS_NAME" value="TestDay04" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day05/test/test_solution.py" />
+      <option name="CLASS_NAME" value="TestDay05" />
       <option name="METHOD_NAME" value="test_part_two" />
       <option name="FOLDER_NAME" value="" />
       <option name="TEST_TYPE" value="TEST_METHOD" />
@@ -413,19 +449,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.solution (2)" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay03.test_part_two" />
-      <item index="2" class="java.lang.String" itemvalue="Python.solution" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestDay04.test_part_one" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestDay04.test_part_two" />
+      <item index="0" class="java.lang.String" itemvalue="Python.solution" />
+      <item index="1" class="java.lang.String" itemvalue="Python.solution (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestDay05" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestDay05.test_part_one" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestDay05.test_part_two" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.solution" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay04.test_part_two" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay04.test_part_one" />
-        <item index="3" class="java.lang.String" itemvalue="Python.solution (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestDay03.test_part_two" />
+        <item index="0" class="java.lang.String" itemvalue="Python.solution (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestDay05.test_part_two" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest TestDay05.test_part_one" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestDay05" />
+        <item index="4" class="java.lang.String" itemvalue="Python.solution" />
       </list>
     </recent_temporary>
   </component>
@@ -443,39 +479,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 21h 52m 09s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 36m 16s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 21h 52m 31s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 39m 35s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 21h 54m 10s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 39m 48s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 21h 55m 49s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 39m 56s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 21h 55m 56s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 42m 31s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_one - 2018.12.05 at 22h 05m 19s.xml">
-      <configuration name="Unittest TestDay04.test_part_one" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 44m 32s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_two - 2018.12.05 at 22h 47m 47s.xml">
-      <configuration name="Unittest TestDay04.test_part_two" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 44m 52s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_two - 2018.12.05 at 22h 49m 16s.xml">
-      <configuration name="Unittest TestDay04.test_part_two" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_one - 2018.12.06 at 07h 46m 29s.xml">
+      <configuration name="Unittest TestDay05.test_part_one" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_two - 2018.12.05 at 23h 00m 01s.xml">
-      <configuration name="Unittest TestDay04.test_part_two" configurationId="tests" />
+    <history-entry file="Unittest_TestDay05_test_part_two - 2018.12.06 at 18h 58m 30s.xml">
+      <configuration name="Unittest TestDay05.test_part_two" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestDay04_test_part_two - 2018.12.05 at 23h 00m 08s.xml">
-      <configuration name="Unittest TestDay04.test_part_two" configurationId="tests" />
+    <history-entry file="Unittests_in_TestDay05 - 2018.12.06 at 07h 34m 48s.xml">
+      <configuration name="Unittests in TestDay05" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="0" width="1612" height="886" extended-state="0" />
+    <frame x="-11" y="0" width="1612" height="886" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -483,7 +519,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -510,7 +546,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="11" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -688,6 +724,50 @@
             <element signature="e#2069#3628#0" expanded="true" />
             <element signature="e#3674#3760#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day05/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="47949" selection-start-line="0" selection-start-column="47949" selection-end-line="0" selection-end-column="47949" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day05/test/test_solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#197#448#0" expanded="true" />
+            <element signature="e#487#547#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day05/solution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding>
+            <element signature="e#16#112#0" expanded="true" />
+            <element signature="e#138#229#0" expanded="true" />
+            <element signature="e#263#334#0" expanded="true" />
+            <element signature="e#369#958#0" expanded="true" />
+            <element signature="e#1009#1310#0" expanded="true" />
+            <element signature="e#1346#1841#0" expanded="true" />
+            <element signature="e#1886#1955#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day05/problem_statement.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.828629">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

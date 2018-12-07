@@ -1,7 +1,7 @@
 import unittest
-import day{0:02d}.solution as solution
+import day05.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
+class TestDay05(unittest.TestCase):
     def setUp(self):
         pass
 
@@ -9,7 +9,13 @@ class TestDay{0:02d}(unittest.TestCase):
         pass
 
     def test_part_one(self):
-        pass
+        self.assertEqual('0', solution.part_one('aA'))
+
+        self.assertEqual('0', solution.part_one('abBA'))
+
+        self.assertEqual('4', solution.part_one('abAB'))
+
+        self.assertEqual(str(len('dabCBAcaDA')), solution.part_one('dabAcCaCBAcCcaDA'))
 
     def test_part_two(self):
-        pass
+        self.assertEqual('4', solution.part_two('dabAcCaCBAcCcaDA'))
