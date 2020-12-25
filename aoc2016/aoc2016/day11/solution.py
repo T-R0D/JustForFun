@@ -149,10 +149,10 @@ class Floor(object):
 
 
 class BitRoom(State):
-    FLOORS = range(0, 4)
+    FLOOR_INDICES = range(0, 4)
     SLOTS = 11
-    RTGS = range(1, SLOTS, 2)
-    CHIPS = range(2, SLOTS, 2)
+    RTG_INDICES = range(1, SLOTS, 2)
+    CHIP_INDICES = range(2, SLOTS, 2)
 
     def __init__(self, current_floor = 0, layout = None):
         super().__init__()
@@ -166,13 +166,13 @@ class BitRoom(State):
 
     def is_valid(self):
         elevator = 0
-        for floor in self.FLOORS:
-            if (floor * len(self.FLOORS)) == 1:
+        for floor in self.FLOOR_INDICES:
+            if (floor * len(self.FLOOR_INDICES)) == 1:
                 elevator = floor
 
-        for floor in self.FLOORS:
-            rtgs = self.get_indices_of_items_on_floor(floor, self.RTGS)
-            chips = self.get_indices_of_items_on_floor(floor, self.CHIPS)
+        for floor in self.FLOOR_INDICES:
+            rtgs = self.get_indices_of_items_on_floor(floor, self.RTG_INDICES)
+            chips = self.get_indices_of_items_on_floor(floor, self.CHIP_INDICES)
 
             if floor == elevator and (not rtgs and not chips):
                 return False
@@ -188,8 +188,8 @@ class BitRoom(State):
         next_states = []
         current_floor = self.current_floor
 
-        rtgs = self.get_indices_of_items_on_floor(current_floor, self.RTGS)
-        chips = self.get_indices_of_items_on_floor(current_floor, self.CHIPS)
+        rtgs = self.get_indices_of_items_on_floor(current_floor, self.RTG_INDICES)
+        chips = self.get_indices_of_items_on_floor(current_floor, self.CHIP_INDICES)
 
         if current_floor > 0:
             down = -1
@@ -374,7 +374,7 @@ class BitRoom(State):
     def get_indices_of_items_on_floor(self, floor, items):
         offset = floor * self.SLOTS
         # print(floor, offset, items[-1]+offset)
-        return [(x + offset) for x in items if self.layout[(x + offset)] != 0]
+        return [x for x in items if self.layout[(x + offset)] != 0]
 
     def __str__(self):
         return str(self.layout)

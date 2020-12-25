@@ -38,9 +38,15 @@ def graph_search(initial_state: State, frontier=None):
     frontier.append((initial_state, []))
     explored.add(str(initial_state))
 
+    current_depth = 0
+
     while frontier:
         current_state, path = frontier.popleft()
         explored.add(str(current_state))
+
+        if len(path) > current_depth:
+            current_depth = len(path)
+            print('Current Search Depth: {}'.format(current_depth))
 
         if current_state.is_goal():
             return current_state, path

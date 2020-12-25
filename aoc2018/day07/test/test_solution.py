@@ -1,7 +1,7 @@
 import unittest
-import day{0:02d}.solution as solution
+import day07.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
+class TestDay07(unittest.TestCase):
     def setUp(self):
         pass
 
@@ -9,7 +9,16 @@ class TestDay{0:02d}(unittest.TestCase):
         pass
 
     def test_part_one(self):
-        pass
+        test_input = [
+            ('C', 'A',),
+            ('C', 'F',),
+            ('A', 'B',),
+            ('A', 'D',),
+            ('B', 'E',),
+            ('D', 'E',),
+            ('F', 'E',),
+        ]
+        self.assertEqual('CABDFE', solution.part_one(test_input))
 
     def test_part_two(self):
         pass
