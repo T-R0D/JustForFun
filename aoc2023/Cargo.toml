@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.4.8", features = ["derive"] }
 indoc = "2"
+regex = "1.10.2"
 
 [dev-dependencies]
 pretty_assertions = "1.4.0"
