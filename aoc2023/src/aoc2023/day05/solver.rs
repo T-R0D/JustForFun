@@ -50,7 +50,6 @@ impl Solver for Day05 {
         Ok(min_location_id.to_string())
     }
 
-    // 119714ms - 99751240
     fn solve_part_2(&self) -> AoCResult {
         let mut seed_ranges = self.seed_list_to_seed_ranges();
         seed_ranges.sort_by(|a, b| b.0.cmp(&a.0));
@@ -242,32 +241,6 @@ impl ResourceMap {
 
         self.merge_ranges(dst_ranges)
     }
-
-    // fn find_ranges(
-    //     &self,
-    //     src: (isize, isize),
-    //     target: (isize, isize),
-    //     transformer: isize,
-    // ) -> Vec<(isize, isize)> {
-    //     if src.1 <= target.0 {
-    //         return vec![src];
-    //     }
-
-    //     if target.1 <= src.0 {
-    //         return vec![src];
-    //     }
-
-    //     let mut ranges = Vec::<(isize, isize)>::with_capacity(3);
-    //     if src.0 < target.0 {
-    //         ranges.push((src.0 - transformer, target.0 - transformer));
-    //     }
-    //     ranges.push((isize::max(src.0, target.0), isize::min(src.1, target.1)));
-    //     if target.1 < src.1 {
-    //         ranges.push((target.1, src.1));
-    //     }
-
-    //     ranges
-    // }
 
     fn merge_ranges(&self, ranges: Vec<(isize, isize)>) -> Vec<(isize, isize)> {
         if ranges.len() <= 1 {
