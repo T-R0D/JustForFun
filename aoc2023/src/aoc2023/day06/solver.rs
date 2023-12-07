@@ -71,8 +71,7 @@ impl Solver for Day06 {
         let winning_product = self
             .boat_races
             .iter()
-            .enumerate()
-            .map(|(i, race)| race.find_record_breaking_strategy_outcomes().len())
+            .map(|race| race.find_record_breaking_strategy_outcomes().len())
             .product::<usize>();
 
         Ok(winning_product.to_string())
