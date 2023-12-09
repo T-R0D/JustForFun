@@ -93,7 +93,6 @@ impl Solver for Day08 {
         // of the period or the offset. It seems that the input was crafted to have the following properties:
         // * Each start reaches only one destination
         // * The length of path from start to destination is the same as the path from destination to itself
-        // * (Maybe) Periods are all prime?
         let periods = periodicities.iter().map(|p| p.period).collect::<Vec<_>>();
 
         // let steps_to_end_on_only_ends = self.try_least_common_multiple(&periods)?;
