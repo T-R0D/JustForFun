@@ -124,7 +124,6 @@ impl Day11 {
     }
 }
 
-#[derive(Debug)]
 struct GridCoordinate {
     i: usize,
     j: usize,
