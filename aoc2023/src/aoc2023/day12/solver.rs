@@ -286,7 +286,7 @@ impl ConditionRecord {
     }
 }
 
-#[derive(Clone, Copy, PartialEq, Debug)]
+#[derive(Clone, Copy, PartialEq)]
 enum Status {
     Operational,
     Damaged,
@@ -304,7 +304,7 @@ impl Status {
     }
 }
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy)]
 struct Placement {
     group_index: usize,
     start_index: usize,
