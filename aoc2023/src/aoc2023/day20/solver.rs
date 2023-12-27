@@ -532,26 +532,4 @@ mod tests {
 
         Ok(())
     }
-
-    #[test]
-    fn part_two_solves_correctly() -> Result<(), String> {
-        // Arrange.
-        let input = &String::from(indoc! {"
-            broadcaster -> a
-            %a -> inv, con
-            &inv -> b
-            %b -> con
-            &con -> output
-        "});
-        let mut solver = Day20::new();
-        solver.consume_input(input)?;
-
-        // Act.
-        let result = solver.solve_part_2()?;
-
-        // Assert.
-        assert_eq!("", result);
-
-        Ok(())
-    }
 }
