@@ -23,8 +23,8 @@ impl Day23 {
 }
 
 impl Solver for Day23 {
-    fn consume_input(&mut self, _input: &String) -> AoCResult {
-        self.grid = _input
+    fn consume_input(&mut self, input: &String) -> AoCResult {
+        self.grid = input
             .trim()
             .lines()
             .map(|line| {
