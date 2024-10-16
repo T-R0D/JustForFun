@@ -26,39 +26,27 @@ class State(object):
     def is_goal(self):
         raise NotImplementedError()
 
-    def __str__(self):
+    def key(self):
         raise NotImplementedError()
 
 
-def graph_search(initial_state: State, frontier=None):
+def graph_search(initial_state: State):
     explored = set()
-    frontier = frontier
-    if frontier == None:
-        frontier = queue.deque()
-    frontier.append((initial_state, []))
-    explored.add(str(initial_state))
-
-    current_depth = 0
+    frontier = queue.deque()
+    frontier.append((initial_state, [initial_state]))
 
     while frontier:
         current_state, path = frontier.popleft()
-        explored.add(str(current_state))
 
-        if len(path) > current_depth:
-            current_depth = len(path)
-            print('Current Search Depth: {}'.format(current_depth))
+        if current_state.key() in explored:
+            continue
 
         if current_state.is_goal():
             return current_state, path
 
         for state in current_state.generate_next_states():
-            if not str(state) in explored:
-                frontier.append((state, path + [str(current_state)]))
+            frontier.append((state, path + [state]))
 
-                # print(repr(state))
-                #
-                # print('ex: {} fr: {} d: {}'.format(len(explored), len(frontier), len(frontier[0][1]) if frontier else None))
-                # print('\n\n'.join([str(x[0]) for x in frontier]))
-                # frontier.clear()
+        explored.add(current_state.key())
 
     return None, None
