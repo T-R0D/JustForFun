@@ -36,6 +36,7 @@ import aoc2016.day16.solution as day16
 import aoc2016.day17.solution as day17
 import aoc2016.day18.solution as day18
 import aoc2016.day19.solution as day19
+import aoc2016.day20.solution as day20
 
 
 def main():
@@ -127,7 +128,10 @@ def main():
             1: day19.part_one,
             2: day19.part_two,
         },
-        # 20: {1: day20.part_one, 2: day20.part_two,},
+        20: {
+            1: day20.part_one,
+            2: day20.part_two,
+        },
         # 21: {1: day21.part_one, 2: day21.part_two,},
         # 22: {1: day22.part_one, 2: day22.part_two,},
         # 23: {1: day23.part_one, 2: day23.part_two,},
