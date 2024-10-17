@@ -35,6 +35,7 @@ import aoc2016.day15.solution as day15
 import aoc2016.day16.solution as day16
 import aoc2016.day17.solution as day17
 import aoc2016.day18.solution as day18
+import aoc2016.day19.solution as day19
 
 
 def main():
@@ -122,7 +123,10 @@ def main():
             1: day18.part_one,
             2: day18.part_two,
         },
-        # 19: {1: day19.part_one, 2: day19.part_two,},
+        19: {
+            1: day19.part_one,
+            2: day19.part_two,
+        },
         # 20: {1: day20.part_one, 2: day20.part_two,},
         # 21: {1: day21.part_one, 2: day21.part_two,},
         # 22: {1: day22.part_one, 2: day22.part_two,},
@@ -131,9 +135,16 @@ def main():
         # 25: {1: day25.part_one, 2: day24.part_two,},
     }[day][part]
 
-    start = time.time()
-    result = solve(puzzle_input)
-    end = time.time()
+    result = ""
+    start = 0
+    end = 0
+    try:
+        start = time.time()
+        result = solve(puzzle_input)
+    except Exception as e:
+        result = str(e)
+    finally:
+        end = time.time()
 
     print(result)
     print(f"{end - start}")
