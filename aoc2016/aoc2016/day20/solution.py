@@ -25,7 +25,6 @@ def part_one(puzzle_input):
     return str(first_allowed_address)
 
 
-# 13628342 too high
 def part_two(puzzle_input):
     block_list = parse_intervals(puzzle_input)
     block_list = merge_intervals(block_list)
