@@ -15,8 +15,6 @@
 import argparse
 import time
 
-from aoc2016.common import read_data
-
 import aoc2016.day01.day01 as day01
 import aoc2016.day02.solution as day02
 import aoc2016.day03.solution as day03
@@ -37,6 +35,7 @@ import aoc2016.day17.solution as day17
 import aoc2016.day18.solution as day18
 import aoc2016.day19.solution as day19
 import aoc2016.day20.solution as day20
+import aoc2016.day21.solution as day21
 
 
 def main():
@@ -132,7 +131,10 @@ def main():
             1: day20.part_one,
             2: day20.part_two,
         },
-        # 21: {1: day21.part_one, 2: day21.part_two,},
+        21: {
+            1: day21.part_one,
+            2: day21.part_two,
+        },
         # 22: {1: day22.part_one, 2: day22.part_two,},
         # 23: {1: day23.part_one, 2: day23.part_two,},
         # 24: {1: day24.part_one, 2: day24.part_two,},
