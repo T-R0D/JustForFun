@@ -1,15 +1,28 @@
 import unittest
-import day{0:02d}.solution as solution
+import aoc2018.day12.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
-    def setUp(self):
-        pass
+TEST_NOTES = """initial state: #..#.#..##......###...###
 
-    def tearDown(self):
-        pass
+...## => #
+..#.. => #
+.#... => #
+.#.#. => #
+.#.## => #
+.##.. => #
+.#### => #
+#.#.# => #
+#.### => #
+##.#. => #
+##.## => #
+###.. => #
+###.# => #
+####. => #"""
 
-    def test_part_one(self):
-        pass
 
-    def test_part_two(self):
-        pass
+class TestDay12(unittest.TestCase):
+    def test_part_one_computes_score_correctly(self):
+        expected = "325"
+
+        result = solution.part_one(TEST_NOTES)
+
+        self.assertEqual(result, expected)
