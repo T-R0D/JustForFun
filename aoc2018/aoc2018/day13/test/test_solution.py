@@ -1,15 +1,46 @@
 import unittest
-import day{0:02d}.solution as solution
+import aoc2018.day13.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
-    def setUp(self):
-        pass
+TEST_TRACK = """/->-\\        
+|   |  /----\\
+| /-+--+-\\  |
+| | |  | v  |
+\\-+-/  \\-+--/
+  \\------/   """
 
-    def tearDown(self):
-        pass
 
-    def test_part_one(self):
-        pass
+TEST_TRACK2 = """/-\  
+\>+-\\
+  \</"""
 
-    def test_part_two(self):
-        pass
+
+TEST_TRACK3 = """/>-<\\  
+|   |  
+| /<+-\\
+| | | v
+\\>+</ |
+  |   ^
+  \\<->/"""
+
+
+class TestDay13(unittest.TestCase):
+    def test_part_one_finds_first_collision(self):
+        expected = "(7, 3)"
+
+        result = solution.part_one(TEST_TRACK)
+
+        self.assertEqual(result, expected)
+
+    def test_part_one_finds_first_collision2(self):
+        expected = "(0, 1)"
+
+        result = solution.part_one(TEST_TRACK2)
+
+        self.assertEqual(result, expected)
+
+    def test_part_two_locates_last_cart(self):
+        expected = "(6, 4)"
+
+        result = solution.part_two(TEST_TRACK3)
+
+        self.assertEqual(result, expected)

@@ -31,7 +31,7 @@ import aoc2018.day25.solution as day25
 def main():
     args = parse_args()
 
-    puzzle_input = args.input.read().strip()
+    puzzle_input = args.input.read().rstrip("\n")
 
     day = args.day
     part = args.part
