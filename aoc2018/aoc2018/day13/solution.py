@@ -1,4 +1,3 @@
-# Not 99,77, (109, 49), (120, 73), (23,30)
 def part_one(puzzle_input):
     grid, carts = parse_track_map(puzzle_input)
 
