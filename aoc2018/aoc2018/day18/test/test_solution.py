@@ -1,15 +1,23 @@
 import unittest
-import day{0:02d}.solution as solution
+import aoc2018.day18.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
-    def setUp(self):
-        pass
 
-    def tearDown(self):
-        pass
+TEST_LAYOUT = """.#.#...|#.
+.....#|##|
+.|..|...#.
+..|#.....#
+#.#|||#|#|
+...#.||...
+.|....|...
+||...#|.#|
+|.||||..|.
+...#.|..|."""
 
-    def test_part_one(self):
-        pass
 
-    def test_part_two(self):
-        pass
+class TestDay18(unittest.TestCase):
+    def test_part_one_computes_resource_value_after_ten_minutes(self):
+        expected = "1147"
+
+        result = solution.part_one(TEST_LAYOUT)
+
+        self.assertEqual(result, expected)
