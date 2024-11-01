@@ -16,7 +16,6 @@ def part_two(puzzle_input):
     current_state = parse_initial_layout(puzzle_input)
     resource_value = 0
 
-
     pre_loop_t = 0
     seen_states = set()
     current_state_str = state_to_str(current_state)
@@ -31,7 +30,7 @@ def part_two(puzzle_input):
     marker_state_str = state_to_str(current_state)
     current_state_str = ""
     while current_state_str != marker_state_str:
-        t_to_resource_value[loop_t] = resource_value 
+        t_to_resource_value[loop_t] = resource_value
         current_state, resource_value = compute_next_state(current_state)
         current_state_str = state_to_str(current_state)
         loop_t += 1
@@ -97,9 +96,6 @@ def compute_next_state(current_state):
 
     return next_state, n_wooded * n_lumberyards
 
+
 def state_to_str(state):
     return "\n".join(["".join(row) for row in state])
-
-
-#632425 too high
-#385645 too high
