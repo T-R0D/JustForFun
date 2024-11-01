@@ -1,15 +1,20 @@
 import unittest
-import day{0:02d}.solution as solution
+import aoc2018.day19.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
-    def setUp(self):
-        pass
+SAMPLE_PROGRAM = """#ip 0
+seti 5 0 1
+seti 6 0 2
+addi 0 1 0
+addr 1 2 3
+setr 1 0 0
+seti 8 0 4
+seti 9 0 5"""
 
-    def tearDown(self):
-        pass
 
-    def test_part_one(self):
-        pass
+class TestDay19(unittest.TestCase):
+    def test_part_one_computes_register_zero_value(self):
+        expected = "7"
 
-    def test_part_two(self):
-        pass
+        result = solution.part_one(SAMPLE_PROGRAM)
+
+        self.assertEqual(result, expected)
