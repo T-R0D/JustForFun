@@ -1,15 +1,17 @@
 import unittest
-import day{0:02d}.solution as solution
+import aoc2018.day20.solution as solution
 
-class TestDay{0:02d}(unittest.TestCase):
-    def setUp(self):
-        pass
 
-    def tearDown(self):
-        pass
+class TestDay20(unittest.TestCase):
+    def test_part_one_computes_furthest_room(self):
+        test_cases = [
+            ("^WNE$", "3"),
+            ("^ENWWW(NEEE|SSE(EE|N))$", "10"),
+            ("^ENNWSWW(NEWS|)SSSEEN(WNSE|)EE(SWEN|)NNN$", "18"),
+        ]
 
-    def test_part_one(self):
-        pass
+        for path_regex, expected in test_cases:
+            with self.subTest(f"{path_regex} => {expected}"):
+                result = solution.part_one(path_regex)
 
-    def test_part_two(self):
-        pass
+                self.assertEqual(result, expected)
