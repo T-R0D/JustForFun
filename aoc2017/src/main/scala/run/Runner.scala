@@ -34,7 +34,7 @@ import solution.{Solution}
 class Runner:
     def run(config: Config): Unit =
         val result = Try {
-            val input = Source.fromFile(config.input).mkString
+            val input = Source.fromFile(config.input).mkString.trim
 
             val solution: Solution = config.day match
                 case 1 => Day01Solution()
