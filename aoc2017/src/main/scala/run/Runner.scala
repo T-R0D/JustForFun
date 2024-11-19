@@ -75,9 +75,11 @@ class Runner:
         }
         
         result match
-                case Success((Right(answer), executionTimeNanos)) =>
-                    println(s"""$answer
-                               |(${executionTimeNanos / 1000}us)
-                             """.stripMargin)
-                case Success((Left(msg), executionTimeNanos))  => println(s"Failure: $msg (${executionTimeNanos}ns)")
-                case Failure(exc) => println(s"Failure: ${exc.toString}")
+            case Success((Right(answer), executionTimeNanos)) =>
+                println(s"""$answer
+                           |(${executionTimeNanos / 1000}us)
+                         """.stripMargin)
+            case Success((Left(msg), executionTimeNanos)) =>
+                println(s"Failure: $msg (${executionTimeNanos}ns)")
+            case Failure(exc) =>
+                println(s"Failure: ${exc.toString}")

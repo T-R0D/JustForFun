@@ -1,6 +1,9 @@
-package Day05
+package day05
 
 import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.*
 
-class Day05SolutionTests extends AnyFunSuite
+import day05.Day05Solution
+
+class Day05SolutionTests extends AnyFunSuite with Matchers
         
