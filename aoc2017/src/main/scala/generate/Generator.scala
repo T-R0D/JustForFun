@@ -80,11 +80,14 @@ class Generator:
         """.stripMargin
 
     def testFileContents(day: Int): String = 
-        f"""package Day$day%02d
+        f"""package day$day%02d
            |
            |import org.scalatest.funsuite.AnyFunSuite
+           |import org.scalatest.matchers.should.*
            |
-           |class Day$day%02dSolutionTests extends AnyFunSuite
+           |import day$day%02d.Day$day%02dSolution
+           |
+           |class Day$day%02dSolutionTests extends AnyFunSuite with Matchers
         """.stripMargin
 
         
