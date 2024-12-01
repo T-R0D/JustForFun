@@ -112,12 +112,13 @@ func Run(inputPath string, day int, part int) error {
 	solveDuration := stopTime.Sub(startTime)
 
 	if err != nil {
-		return fmt.Errorf(
-			"unable to solve %d.%d, errored after %dµs: %w",
+		fmt.Printf(
+			"unable to solve %d.%d, errored after %dµs: %+v\n",
 			day,
 			part,
 			solveDuration.Microseconds(),
 			err)
+		return nil
 	}
 
 	fmt.Printf("%s\n", result)
