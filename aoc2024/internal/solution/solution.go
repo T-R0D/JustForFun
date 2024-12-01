@@ -3,6 +3,7 @@ package solution
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/T-R0D/aoc2024/v2/internal/day01"
@@ -105,7 +106,7 @@ func Run(inputPath string, day int, part int) error {
 		solve = solver.SolvePartTwo
 	}
 
-	input := string(inputBytes)
+	input := strings.Trim(string(inputBytes), "\n")
 	startTime := time.Now()
 	result, err := solve(string(input))
 	stopTime := time.Now()
