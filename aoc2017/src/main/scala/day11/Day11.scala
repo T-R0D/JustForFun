@@ -9,7 +9,11 @@ class Day11Solution extends Solution:
         yield
             tracePathToFindShortestPathDistance(path).toString
 
-    override def partTwo(input: String): Either[String, String] = ???
+    override def partTwo(input: String): Either[String, String] =
+        for 
+            path <- parseHexTilePath(input)
+        yield
+            tracePathToFindMostDistantPoint(path).toString
 
     def parseHexTilePath(input: String): Either[String, Seq[HexDirection]] =
         val results = input.split(",").map(HexDirection.fromString)
@@ -49,16 +53,24 @@ class Day11Solution extends Solution:
         }
         hexagonalManhattanDistance((0, 0), resultingLocation)
 
+    def tracePathToFindMostDistantPoint(path: Seq[HexDirection]): Int =
+        val (_, furthestDistance) =
+            path.foldLeft(((0, 0), 0)) { (acc, nextStep) =>
+                val (currentLocation, furthestDistanceSoFar) = acc
+                val delta = nextStep.toDelta()
+                val nextLocation = (currentLocation._1 + delta._1, currentLocation._2 + delta._2)
+                val nextDistanceFromOrigin = hexagonalManhattanDistance((0, 0), nextLocation)
+                val furthestDistance = Math.max(nextDistanceFromOrigin, furthestDistanceSoFar)
+                (nextLocation, furthestDistance)
+            }
+        furthestDistance
+
     def hexagonalManhattanDistance(a: (Int, Int), b: (Int, Int)): Int =
-        val verticalDiff = Math.abs(a._1 - b._2)
+        val verticalDiff = Math.abs(a._1 - b._1)
         val horizontalDiff = Math.abs(a._2 - b._2)
         val horizontalSteps = horizontalDiff
-        val remainingVerticalDistance = Math.max(1, Math.abs(verticalDiff - horizontalSteps))
+        val remainingVerticalDistance = verticalDiff - Math.min(horizontalSteps, verticalDiff)
         val straightVerticalSteps = remainingVerticalDistance / 2
-
-        println(s"$a -> $b = ${horizontalSteps + straightVerticalSteps}")
-        println(s"\tremaining vertical distance: $remainingVerticalDistance")
-        println(s"\t$horizontalSteps $straightVerticalSteps")
 
         horizontalSteps + straightVerticalSteps
 

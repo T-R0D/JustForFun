@@ -17,7 +17,7 @@ class Day11SolutionTests extends AnyFunSuite with Matchers:
             ("n", "1"),
             ("ne,ne", "2"),
             ("sw,nw", "2"),
-            ("sw,nw,n", "3"),
+            ("sw,nw,n", "2"),
         )
 
         forAll(testCases) { (input, expected) =>
