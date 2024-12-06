@@ -4,12 +4,29 @@ import (
 	"testing"
 )
 
+const sampleMap = `....#.....
+.........#
+..........
+..#.......
+.......#..
+..........
+.#..^.....
+........#.
+#.........
+......#...`
+
 func TestPartOne(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "PartOne counts distinct locations occupied by guard",
+			input:    sampleMap,
+			expected: "41",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -30,11 +47,17 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "PartTwo determines the number of places to put an additional obstruction to create a loop",
+			input:    sampleMap,
+			expected: "6",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
