@@ -16,5 +16,16 @@ class Day15SolutionTests extends AnyFunSuite with Matchers {
 
         result should equal (Right(expected))
     }
+
+    test("partTwo finds the number of (lower 16 bit) matches in 5 million iterations with picky generators") {
+        val input = """|Generator A starts with 65
+                       |Generator B starts with 8921""".stripMargin
+        val expected = "309"
+        val solution = Day15Solution()
+
+        val result = solution.partTwo(input)
+
+        result should equal (Right(expected))
+    }
 }
         

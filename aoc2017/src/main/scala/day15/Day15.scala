@@ -45,3 +45,20 @@ class Day15Solution extends Solution:
 
         lower16MatchesFound
     }
+
+    class Generator(startValue: Long, multiplicationFactor: Long, mod: Long, multipleRequirement: Long) {
+        private var trueSequence: LazyList[Long] = LazyList.iterate(startValue)(advance)
+        private var publishedSequence: LazyList[Long] = LazyList.iterate(startValue)(identity)
+
+        private def advance(previous: Long): Long = {
+            previous * multiplicationFactor % mod
+        }
+
+        private def nextOffer(): Long = {
+            trueSequence.takeWhile(x => x % multipleRequirement != 0)
+
+            val nextValue = trueSequence.head
+            trueSequence = trueSequence.tail
+            nextValue
+        }
+    }

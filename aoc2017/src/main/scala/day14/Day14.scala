@@ -13,7 +13,14 @@ class Day14Solution extends Solution:
         Right(usedBlocks.toString)
     }
 
-    override def partTwo(input: String): Either[String, String] = ???
+    override def partTwo(input: String): Either[String, String] = {
+        val hashKey = parseHashKey(input)
+
+        val memoryGrid = computeMemoryGridState(hashKey)
+        val contiguousGroups = findContiguousMemoryGroups(memoryGrid)
+
+        Right(contiguousGroups.size.toString)
+    }
 
     def parseHashKey(input: String): String = {
         input
@@ -62,12 +69,51 @@ class Day14Solution extends Solution:
             case _ => Seq(99999)
     }
 
-    def countContiguousMemoryGroups(memoryMap: Seq[Seq[Int]]): Seq[Set[(Int, Int)]] = {
-        for {
-            (row, i) <- memoryMap.zipWithIndex
-            (_, j) <- row.zipWithIndex
-        } yield {
-            Set.empty
+    def findContiguousMemoryGroups(memoryMap: Seq[Seq[Int]]): Seq[Set[(Int, Int)]] = {
+        {
+            for {
+                (row, i) <- memoryMap.zipWithIndex
+                (status, j) <- row.zipWithIndex
+            } yield {
+                ((i, j), status)
+            }
+        }.foldLeft(Seq.empty: Seq[Set[(Int, Int)]]) { (acc, candidate) =>
+            val (loc, status) = candidate
+            if status == 0 then {
+                acc
+            } else if acc.exists(_.contains(loc)) then {
+                acc
+            } else {
+                acc :+ findContiguousMemoryGroupHelper(memoryMap, loc, Set.empty)
+            }
+        }
+    }
+
+    def findContiguousMemoryGroupHelper(
+        memoryMap: Seq[Seq[Int]],
+        loc: (Int, Int),
+        group: Set[(Int, Int)]
+    ): Set[(Int, Int)] = {
+        val (i, j) = loc
+        if group.contains(loc) then {
+            group
+        } else if i < 0 || i >= memoryMap.size || j < 0 || j >= memoryMap(0).size then
+            group
+        else if memoryMap(i)(j) == 0 then {
+            group
+        } else {
+            val updatedGroup = group + loc
+            {
+                for
+                    di <- -1 to 1
+                    dj <- -1 to 1
+                    if !(Math.abs(di) == Math.abs(dj))
+                yield
+                    (di, dj) 
+            }.foldLeft(updatedGroup) { (acc, delta) => 
+                val (di, dj) = delta
+                findContiguousMemoryGroupHelper(memoryMap, (i + di, j + dj), acc)
+            }
         }
     }
 
