@@ -6,12 +6,18 @@ class Day15Solution extends Solution:
     override def partOne(input: String): Either[String, String] = {
         val seeds = parseSeedValues(input)
 
-        val lower16Matches = countLower16MatchesInGeneration(seeds, 40_000_000)
+        val lower16Matches = countLower16MatchesInGeneration(seeds, (1, 1), 40_000_000)
 
         Right(lower16Matches.toString)
     }
 
-    override def partTwo(input: String): Either[String, String] = ???
+    override def partTwo(input: String): Either[String, String] = {
+        val seeds = parseSeedValues(input)
+
+        val lower16Matches = countLower16MatchesInGeneration(seeds, (4, 8), 5_000_000)
+
+        Right(lower16Matches.toString)
+    }
 
     def parseSeedValues(input: String): (Long, Long) = {
         val startingValues = {
@@ -24,32 +30,33 @@ class Day15Solution extends Solution:
         (startingValues(0), startingValues(1))
     }
 
-    def countLower16MatchesInGeneration(seeds: (Long, Long), n: Int): Int = {
+    def countLower16MatchesInGeneration(
+        seeds: (Long, Long),
+        multipleRequirements: (Long, Long),
+        n: Int,
+    ): Int = {
         val (seedA, seedB) = seeds
         val (multiplicationFactorA, multiplicationFactorB) = (16807l, 48271l)
         val mod = 2147483647l
+        val (multipleRequirementA, multipleRequirementB) = multipleRequirements
 
         val (generatorA, generatorB) = (
-            Generator.newGenerator(seed = seedA, multiplicationFactor = multiplicationFactorA, mod = mod, multipleRequirement = 1),
-            Generator.newGenerator(seed = seedB, multiplicationFactor = multiplicationFactorB, mod = mod, multipleRequirement = 1),
+            Generator.newGenerator(seedA, multiplicationFactorA, mod, multipleRequirementA),
+            Generator.newGenerator(seedB, multiplicationFactorB, mod, multipleRequirementB),
         )
 
         val lower16Mask: Long = (1 << 16) - 1
-        val (_, _, matchesFound) = (0 until n).foldLeft((generatorA, generatorB, 0)) { (acc, _) =>
-            val (generatorA, generatorB, matchesFound) = acc
-            
-            val (valA, nextGeneratorA) = generatorA.next()
-            val (valB, nextGeneratorB) = generatorB.next()
+        val matchesFound = (0 until n).foldLeft(0) { (acc, _) =>
+            val valA = generatorA.next()
+            val valB = generatorB.next()
 
             val nextValues = (valA, valB)
-            val newMatchesFound = {
+            {
                 if (valA & lower16Mask) == (valB & lower16Mask) then
-                    matchesFound + 1
+                    acc + 1
                 else
-                    matchesFound
+                    acc
             }
-
-            (nextGeneratorA, nextGeneratorB, newMatchesFound)
         }
 
         matchesFound
@@ -57,18 +64,16 @@ class Day15Solution extends Solution:
 
     class Generator private (
         value: Long,
-        sequence: LazyList[Long],
+        var sequence: LazyList[Long],
         multipleRequirement: Long,
     ) {
         def hasNext(): Boolean = {
             true
         }
 
-        def next(): (Long, Generator) = {
-            val advancedSequence = sequence.drop(1).dropWhile(x => x % multipleRequirement != 0)
-            val nextPublishedValue = advancedSequence.head
-
-            (nextPublishedValue, Generator(nextPublishedValue, advancedSequence, multipleRequirement))
+        def next(): Long = {
+            sequence = sequence.tail.dropWhile(x => x % multipleRequirement != 0)
+            sequence.head
         }
     }
 
@@ -86,10 +91,8 @@ class Day15Solution extends Solution:
         }
 
         private def newNextNumberFn(multiplicationFactor: Long, mod: Long): (Long => Long) = {
-            def f(previous: Long): Long = {
+            (previous: Long) => {
                 previous * multiplicationFactor % mod
             }
-
-            f
         }
     }
