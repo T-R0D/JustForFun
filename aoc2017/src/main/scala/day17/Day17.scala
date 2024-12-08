@@ -1,7 +1,6 @@
 package day17
 
 import solution.Solution
-import scala.annotation.static
 
 class Day17Solution extends Solution {
     override def partOne(input: String): Either[String, String] = {
@@ -17,9 +16,9 @@ class Day17Solution extends Solution {
         val stepSize = parseSpinlockStepSize(input)
         val nIterations = 50_000_000
 
-        val ringList = simulateSpinlockPath(nIterations, stepSize)
+        val finalValue = simulateSpinlockEnteringSinglePosition(1, stepSize, nIterations)
 
-        Right(ringList.nextPosition(0).toString)
+        Right(finalValue.toString)
     }
 
     def parseSpinlockStepSize(input: String): Int = {
@@ -57,5 +56,30 @@ class Day17Solution extends Solution {
             data(0) = 0
             RingList(data, 0)
         }
+    }
+
+    def simulateSpinlockEnteringSinglePosition(targetPosition: Int, stepSize: Int, nIterations: Int): Int = {
+        val (targetValue, _, _) = (1 to nIterations).foldLeft((-1, 0, 0)) { (acc, i) =>
+            val (targetValue, offset, currentPosition) = acc
+            
+            val newPosition = ((currentPosition + stepSize) % i) + 1
+            val newOffset = {
+                if newPosition == 0 then {
+                    offset + 1
+                } else {
+                    offset
+                }
+            }
+            val newTargetValue = {
+                if newPosition == targetPosition + offset then {
+                    i
+                } else {
+                    targetValue
+                }
+            }
+            (newTargetValue, newOffset, newPosition)
+        }
+
+        targetValue
     }
 }
