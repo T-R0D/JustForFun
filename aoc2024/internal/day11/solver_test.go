@@ -5,11 +5,17 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "PartOne computes the correct number of stones after 25 blinks",
+			input:    "125 17",
+			expected: "55312",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -30,7 +36,7 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
