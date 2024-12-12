@@ -10,15 +10,43 @@ class Day20Solution extends Solution {
         results match
             case x @ Left(errors) => Left(errors.mkString("; ")) 
             case Right(particles) => {
-                val id = mostHomeboundParticle(particles)
+                val id = mostHomeboundParticleId(particles)
 
                 Right(id.toString)
             }
     }
 
-    override def partTwo(input: String): Either[String, String] = ???
+    override def partTwo(input: String): Either[String, String] = {
+        val results = parseParticles(input)
+        results match
+            case x @ Left(errors) => Left(errors.mkString("; ")) 
+            case Right(particles) => {
+                val nRemainingParticles = simulateToEliminate(particles)
 
-    case class Particle(position: Array[Int], velocity: Array[Int], acceleration: Array[Int])
+                Right(nRemainingParticles.toString)
+            }
+    }
+
+    case class Particle(position: Array[Int], velocity: Array[Int], acceleration: Array[Int]) {
+        def next(): Particle = {
+            val newVelocity = velocity.zip(acceleration).map((v, a) => v + a)
+            val newPosition = position.zip(newVelocity).map((p, v) => p + v)
+            Particle(newPosition, newVelocity, acceleration)
+        }
+
+        def distanceFromOrigin(): Int = {
+            position.fold(0) { (acc, p) => acc + Math.abs(p) }
+        }
+
+        def positionTuple(): (Int, Int, Int) = {
+            (position(0), position(1), position(2))
+        }
+
+        override
+        def toString(): String = {
+            s"Particle(${position.mkString(",")}, ${velocity.mkString(",")}, ${acceleration.mkString(",")})"
+        }
+    }
 
     def parseParticles(input: String): Either[Seq[String], Seq[Particle]] = {
         val prefixes = Seq("p=<", "v=<", "a=<")
@@ -32,7 +60,7 @@ class Day20Solution extends Solution {
                         .map(_.toInt)
                         .toArray
                 }.toSeq
-                Particle(position = vectors(0), velocity = vectors(1), acceleration = vectors(0))
+                Particle(position = vectors(0), velocity = vectors(1), acceleration = vectors(2))
             }.toEither.left.map(_.toString)
         }
 
@@ -49,20 +77,63 @@ class Day20Solution extends Solution {
         }
     }
     
-    def mostHomeboundParticle(particles: Seq[Particle]): Int = {
-        val (id, _) = particles.zipWithIndex.foldLeft((0, particles.head.acceleration)) { (acc, particleWithId) =>
-            val (homboundestId, homeboundestAcceleration) = acc
-            val (particle, id) = particleWithId
-            val accelerationMagnitude = particle.acceleration.reduce((a, b) => Math.abs(a) + Math.abs(b))
-            val homeboundestAccelerationMagnitude = homeboundestAcceleration.reduce((a, b) => Math.abs(a) + Math.abs(b))
-            if accelerationMagnitude < homeboundestAccelerationMagnitude then {
-                (id, particle.acceleration)
-            } else {
-                acc
-            }
+    def mostHomeboundParticleId(particles: Seq[Particle]): Int = {
+        val particlesWithIds = particles
+            .zipWithIndex
+            .sortBy((p, _) => p.distanceFromOrigin())
 
+        mostHomeboundParticleIdInternal(particlesWithIds, 0)
+    }
+
+    @scala.annotation.tailrec
+    final def mostHomeboundParticleIdInternal(particles: Seq[(Particle, Int)], nTimesSameHead: Int): Int = {
+        val currentRankings = particles.map(_._2)
+        val nextParticles = particles
+            .map((p, id) => (p.next(), id))
+            .sortBy((p, _) => p.distanceFromOrigin())
+
+        val nextTimesSameHead = {
+            if nextParticles.head._2 == particles.head._2 then {
+                nTimesSameHead + 1
+            } else {
+                0
+            }
         }
 
-        id
+        // Arbitrary definition of "the long term".
+        if nextTimesSameHead == 1000 then {
+            nextParticles.head._2
+        } else {
+            mostHomeboundParticleIdInternal(nextParticles, nextTimesSameHead)
+        }
+    }
+
+    def simulateToEliminate(particles: Seq[Particle]): Int = {
+        simulateToEliminateInternal(particles, 0)
+    }
+
+    @scala.annotation.tailrec
+    final def simulateToEliminateInternal(particles: Seq[Particle], nTimesWithoutCollisions: Int): Int = {
+        val nextParticles = particles
+            .map(_.next())
+            .groupBy(_.positionTuple())
+            .filter((p, colocatedParticles) => colocatedParticles.size <= 1)
+            .toSeq
+            .flatMap((k, v) => v)
+
+        val nextTimesWithoutCollistions = {
+            if particles.size == nextParticles.size then {
+                nTimesWithoutCollisions + 1
+            } else {
+                0
+            }
+        }
+
+        // Arbitrary definition of "the long term".
+        if nTimesWithoutCollisions == 1000 then {
+            nextParticles.size
+        } else {
+            simulateToEliminateInternal(nextParticles, nextTimesWithoutCollistions)
+        }
     }
 }
