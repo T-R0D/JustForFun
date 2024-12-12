@@ -121,7 +121,7 @@ class Day20Solution extends Solution {
             .toSeq
             .flatMap((k, v) => v)
 
-        val nextTimesWithoutCollistions = {
+        val nextTimesWithoutCollisions = {
             if particles.size == nextParticles.size then {
                 nTimesWithoutCollisions + 1
             } else {
@@ -133,7 +133,7 @@ class Day20Solution extends Solution {
         if nTimesWithoutCollisions == 1000 then {
             nextParticles.size
         } else {
-            simulateToEliminateInternal(nextParticles, nextTimesWithoutCollistions)
+            simulateToEliminateInternal(nextParticles, nextTimesWithoutCollisions)
         }
     }
 }

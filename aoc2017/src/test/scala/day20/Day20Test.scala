@@ -17,5 +17,19 @@ class Day20SolutionTests extends AnyFunSuite with Matchers {
 
         result should equal(Right(expected))
     }
+
+    test("partTwo finds the remaining particle count after all collisions have happened") {
+        val input = """|p=<-6,0,0>, v=<3,0,0>, a=<0,0,0>
+                       |p=<-4,0,0>, v=<2,0,0>, a=<0,0,0>
+                       |p=<-2,0,0>, v=<1,0,0>, a=<0,0,0>
+                       |p=<3,0,0>, v=<-1,0,0>, a=<0,0,0>
+                       |""".stripMargin
+        val expected = "1"
+        val solution = Day20Solution()
+
+        val result = solution.partTwo(input)
+
+        result should equal(Right(expected))
+    }
 }
         
