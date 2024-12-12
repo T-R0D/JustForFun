@@ -24,7 +24,7 @@ func (self *Fifo[T]) Push(x T) {
 	}
 
 	self.data[self.last] = x
-	self.last += 1
+	self.last = (self.last + 1) % len(self.data)
 }
 
 func (self *Fifo[T]) Pop() (T, bool) {
