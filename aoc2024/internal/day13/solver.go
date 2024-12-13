@@ -150,12 +150,19 @@ func findCostToWinPrize(machine *arcadeMachine, maxPressesPerButton int64) (int6
 		return 0, false
 	}
 
+	if result.A < 0 || result.B < 0 {
+		return 0, false
+	}
+
+	// TODO: Account for collinearity of A, B, and Prize (aka multiple solutions).
+	// The inputs seem to be nice and not present this case.
+
 	// With the given inputs, this requirement turned out to be a red herring,
 	// but it is left for completeness.
 	if result.A > maxPressesPerButton || result.B > maxPressesPerButton {
 		return 0, false
 	}
-	
+
 	return result.A*costToPressA + result.B*costToPressB, true
 }
 
@@ -171,7 +178,7 @@ type gaussianEliminationResult struct {
 // The function transforms the `machine` into a matrix of the form:
 // ```
 // x_1  x_2  x_p
-// y_1  y_2  y_p  
+// y_1  y_2  y_p
 // ```
 // in order to solve the for A and B in the equations
 // `A * a_button_x_delta + B * b_button_x_delta = prize_location_x` and
@@ -197,7 +204,7 @@ func integerGaussianElimination(machine *arcadeMachine) (gaussianEliminationResu
 	// I'm lazy, it is less algorithmically complex, and the inputs allow it
 	// (if they were larger, we might need LCM).
 	commonMultiple := matrix[0][0] * matrix[1][0]
-	for i := range 2{
+	for i := range 2 {
 		multiplier := commonMultiple / matrix[i][0]
 		for j := range 3 {
 			matrix[i][j] *= multiplier
@@ -210,14 +217,14 @@ func integerGaussianElimination(machine *arcadeMachine) (gaussianEliminationResu
 	}
 
 	// Step 3: Find the value for B (if it is an integer solution).
-	if matrix[1][2] % matrix[1][1] != 0 {
+	if matrix[1][2]%matrix[1][1] != 0 {
 		return gaussianEliminationResult{}, false
 	}
 	b := matrix[1][2] / matrix[1][1]
 
 	// Step 4: Find A through substitution of B (if it is an integer solution).
 	firstRowLhs := matrix[0][2] - (matrix[0][1] * b)
-	if firstRowLhs % matrix[0][0] != 0 {
+	if firstRowLhs%matrix[0][0] != 0 {
 		return gaussianEliminationResult{}, false
 	}
 	a := firstRowLhs / matrix[0][0]
