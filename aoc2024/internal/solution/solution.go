@@ -123,7 +123,7 @@ func Run(inputPath string, day int, part int) error {
 	}
 
 	fmt.Printf("%s\n", result)
-	fmt.Printf("(%dµs)", solveDuration.Microseconds())
+	fmt.Printf("(%dµs)\n", solveDuration.Microseconds())
 
 	return nil
 }
