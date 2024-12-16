@@ -8,11 +8,11 @@ type Priority[T any] struct {
 	internal internalHeap[T]
 }
 
-func NewPriority[T comparable](cmp func(T, T) bool) Priority[T] {
+func NewPriority[T any](cmp func(T, T) bool) Priority[T] {
 	return NewPriorityWithCapacity[T](cmp, 100)
 }
 
-func NewPriorityWithCapacity[T comparable](cmp func(T, T) bool, capacity int) Priority[T] {
+func NewPriorityWithCapacity[T any](cmp func(T, T) bool, capacity int) Priority[T] {
 	return Priority[T]{
 		internal: internalHeap[T]{
 			data: make([]T, 0, capacity),
