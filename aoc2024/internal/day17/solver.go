@@ -155,7 +155,7 @@ func findQuineInitValue(program []int, arbitraryOperation func(int) int) (int, b
 		Depth    int
 	}
 	frontier := queue.NewLifo[searchState]()
-	for d := 1; d < 8; d++ {
+	for d := 1; d < 8; d += 1 {
 		frontier.Push(searchState{Dividend: d, Depth: len(program) - 1})
 	}
 
@@ -198,8 +198,8 @@ func findQuineInitValue(program []int, arbitraryOperation func(int) int) (int, b
 }
 
 func actualInputArbitraryOperation(dividend int) int {
-	b := ((dividend) % 8) ^ 3
-	c := ((dividend) / (1 << b)) % 8
+	b := ((dividend) & 0x07) ^ 3
+	c := ((dividend) >> b) &0x07
 	return (b ^ c) ^ 3
 }
 
@@ -259,7 +259,7 @@ func (e *Emulator) Execute(quineMode bool) (string, bool) {
 }
 
 func (e *Emulator) adv(operand int) {
-	e.registers[0] = e.registers[0] / (1 << e.comboOperandValue(operand))
+	e.registers[0] = e.registers[0] >> e.comboOperandValue(operand)
 }
 
 func (e *Emulator) bxl(operand int) {
@@ -286,11 +286,11 @@ func (e *Emulator) out(operand int) {
 }
 
 func (e *Emulator) bdv(operand int) {
-	e.registers[1] = e.registers[0] / (1 << e.comboOperandValue(operand))
+	e.registers[1] = e.registers[0] >> e.comboOperandValue(operand)
 }
 
 func (e *Emulator) cdv(operand int) {
-	e.registers[2] = e.registers[0] / (1 << e.comboOperandValue(operand))
+	e.registers[2] = e.registers[0] >> e.comboOperandValue(operand)
 }
 
 func (e *Emulator) comboOperandValue(operand int) int {
