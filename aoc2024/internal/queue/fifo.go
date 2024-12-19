@@ -19,7 +19,7 @@ func NewFifoWithCapacity[T any](capacity int) Fifo[T] {
 }
 
 func (self *Fifo[T]) Push(x T) {
-	if self.Len() == len(self.data) {
+	if self.Len() == len(self.data)-1 {
 		self.reallocate(2 * len(self.data))
 	}
 
