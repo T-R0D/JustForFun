@@ -70,27 +70,67 @@ class Day24Solution extends Solution {
 
     }
 
-    def constructGraph(segments: Seq[Segment]): (Map[Int, Segment], Map[Int, Int]) = {
+    def constructGraph(segments: Seq[Segment]): (Map[Int, Segment], Map[Int, Seq[Int]]) = {
         val lookup = segments.zipWithIndex.map(_.swap).toMap
 
         val graph = (
             for {
                 (i, a) <- lookup
                 (j, b) <- lookup
-                if a.end == b.start || a.start == b.end
+                if i != j && (a.end == b.start || a.start == b.end)
             } yield {
-                i -> j
+                if a.end == b.start then {
+                    (i, j)
+                } else {
+                    (j, i)
+                }
             }
-        )
+        ).toSeq.groupBy(_._1).mapValues(x => x.map(_._2)).toMap
 
         (lookup, graph)
     }
 
+    case class SegmentUsage(label: Int, segment: Segment, reversed: Boolean) {
+        def nextMatch(): Int = {
+            if reversed then {
+                segment.start
+            } else {
+                segment.end
+            }
+        }
+    }
+
     def findStrongestPossibleBridgeStartingWith(
         lookup: Map[Int, Segment],
-        graph: Map[Int, Int],
-        startSegment: Int
-    ): Seq[Int] = {???}
+        graph: Map[Int, Seq[Int]],
+        usedSegments: Seq[SegmentUsage],
+    ): (Seq[Int], Int) = {
+        val recentSegment = usedSegments.last
+        val candidateLabels = graph
+            .getOrElse(recentSegment.label, Seq.empty)
+            .filter { (candidateLabel) =>
+                val candidateSegment = lookup.get(candidateLabel)
+                candidateSegment match {
+                    case None => false
+                    case Some(segment) => !usedSegments.contains(segment)
+                }
+            }
+
+        if candidateLabels.isEmpty then {
+            val s = usedSegments.map(_.segment)
+            (s, scoreBridge(s))
+        } else {
+            candidateLabels.foldLeft(0) { (acc, candidateLabel) =>
+                
+            }
+        }
+    }
+
+    def scoreBridge(segments: Seq[Segment]): Int = {
+        segments.foldLeft(0) { (acc, segment) =>
+            acc + (segment.start + segment.end)
+        }
+    }
 }
 
         
