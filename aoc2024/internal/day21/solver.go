@@ -2,6 +2,7 @@ package day21
 
 import (
 	"fmt"
+	"math"
 	"strconv"
 	"strings"
 
@@ -88,44 +89,8 @@ var directionalKeyLocations map[rune]vec2 = map[rune]vec2{
 }
 
 func findComplexityScoreOfEnteringCodes(codes []unlockCode) (int64, error) {
-	numberPadDirectionRanks := map[rune]int{
-		'<': 1,
-		'>': 3,
-		'v': 4,
-		'^': 2,
-	}
-
-	numberPadNavigations := newKeyToNavigationMap(numberKeyLocations, map[rune]int{})
-	directionPadNavigations := newKeyToNavigationMap(directionalKeyLocations, numberPadDirectionRanks)
-	// directionPadNavigations = newRefinedKeyToNavigationMap(directionalKeyLocations, directionPadNavigations)
-	// numberPadNavigations = newRefinedKeyToNavigationMap(numberKeyLocations, directionPadNavigations)
-
-	// pairs := [][]rune{
-	// 	{'3', '7'},
-	// 	{'1', '9'},
-	// 	{'A', '8'},
-	// 	{'A', '7'},
-	// 	{'A', '5'},
-	// 	{'A', '4'},
-	// 	{'A', '1'},
-	// }
-	// for _, pair := range pairs {
-	// 	func(src rune, dst rune) {
-	// 		fmt.Printf("%c -> %c | %s\n", src, dst, string(numberPadNavigations[src][dst]))
-	// 		fmt.Printf("%c -> %c | %s\n", dst, src, string(numberPadNavigations[dst][src]))
-	// 	}(pair[0], pair[1])
-	// }
-
-	// numberPadNavigations['3']['7'] = []rune{'<', '<', '^', '^'}
-	// numberPadNavigations['1']['9'] = []rune{'>', '>', '^', '^'}
-	// numberPadNavigations['A']['8'] = []rune{'<', '^', '^', '^'}
-	// numberPadNavigations['A']['5'] = []rune{'<', '^', '^'}
-	// // numberPadNavigations['A']['4'] = []rune{'<', '^', '^'}
-	// numberPadNavigations['A']['1'] = []rune{'<', '<', '^'}
-	// // numberPadNavigations['7']['3'] = []rune{'>', '>', 'v', 'v'}
-	// // numberPadNavigations['9']['1'] = []rune{'v', 'v', '<', '<'}
-	// // numberPadNavigations['8']['A'] = []rune{'>', 'v', 'v', 'v'}
-	// numberPadNavigations['5']['A'] = []rune{'>', 'v', 'v'}
+	numberPadNavigations := newKeyToNavigationMap(numberKeyLocations)
+	directionPadNavigations := newKeyToNavigationMap(directionalKeyLocations)
 
 	totalComplexity := int64(0)
 	for _, code := range codes {
@@ -134,11 +99,7 @@ func findComplexityScoreOfEnteringCodes(codes []unlockCode) (int64, error) {
 			return 0, err
 		}
 
-		// fmt.Printf("code: %v\n", string(code))
-
-		sequence := findSequenceToEnterCode(numberPadNavigations, directionPadNavigations, code)
-
-		// fmt.Printf("%d * %d = %d\n", value, len(sequence), value*int64(len(sequence)))
+		sequence := findFinalSequenceLengthToEnterCode(numberPadNavigations, directionPadNavigations, code)
 
 		totalComplexity += value * int64(len(sequence))
 	}
@@ -146,47 +107,39 @@ func findComplexityScoreOfEnteringCodes(codes []unlockCode) (int64, error) {
 	return totalComplexity, nil
 }
 
-type keyToKeyNavigationLookup map[rune]navigationLookup
+type keyToKeyNavigationOptionsLookup map[rune]keyToNavigationOptionsLookup
 
-type navigationLookup map[rune][]rune
+type keyToNavigationOptionsLookup map[rune]navigationOptionList
 
-func newKeyToNavigationMap(keyLocations map[rune]vec2, directionRanks map[rune]int) keyToKeyNavigationLookup {
-	keyToNavigation := keyToKeyNavigationLookup{}
+type navigationOptionList [][]rune
+
+func newKeyToNavigationMap(keyLocations map[rune]vec2) keyToKeyNavigationOptionsLookup {
+	keyToNavigation := keyToKeyNavigationOptionsLookup{}
 	for src := range keyLocations {
-		navigations := navigationLookup{}
+		keyToNavigationOptions := keyToNavigationOptionsLookup{}
 		for dst := range keyLocations {
-			navigations[dst] = navigateFromSrcKeyToDstKey(keyLocations, directionRanks, src, dst)
+			keyToNavigationOptions[dst] = navigateFromSrcKeyToDstKey(keyLocations, src, dst)
 		}
 
-		keyToNavigation[src] = navigations
+		keyToNavigation[src] = keyToNavigationOptions
 	}
 
 	return keyToNavigation
 }
 
-func newRefinedKeyToNavigationMap(keyLocations map[rune]vec2, translationLookup keyToKeyNavigationLookup) keyToKeyNavigationLookup {
-	keyToNavigation := keyToKeyNavigationLookup{}
-	for src := range keyLocations {
-		navigations := navigationLookup{}
-		for dst := range keyLocations {
-			navigations[dst] = refinedNavigateFromSrcKeyToDstKey(keyLocations, translationLookup, src, dst)
-		}
-
-		keyToNavigation[src] = navigations
-	}
-
-	return keyToNavigation
-}
-
-func navigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, directionRanks map[rune]int, src rune, dst rune) []rune {
+func navigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, src rune, dst rune) navigationOptionList {
 	locationToKey := map[vec2]rune{}
 	for key, location := range keyLocations {
 		locationToKey[location] = key
 	}
 
+	srcLocation := keyLocations[src]
+	dstLocation := keyLocations[dst]
+
 	type searchState struct {
 		Location vec2
 		Path     []rune
+		RunScore int
 	}
 
 	cmpSearchState := func(a searchState, b searchState) bool {
@@ -194,26 +147,14 @@ func navigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, directionRanks map[r
 			return len(a.Path) < len(b.Path)
 		}
 
-		runScoreA := getPathRunScore(a.Path)
-		runScoreB := getPathRunScore(b.Path)
-
-		if len(a.Path) == 0 {
-			return false
-		}
-
-		if runScoreA != runScoreB {
-			return runScoreA > runScoreB
-		}
-
-		firstDirRankA := directionRanks[a.Path[0]]
-		firstDirRankB := directionRanks[b.Path[0]]
-		return firstDirRankA < firstDirRankB
+		return a.RunScore > b.RunScore
 	}
 
 	frontier := queue.NewPriority[searchState](cmpSearchState)
 	frontier.Push(searchState{
-		Location: keyLocations[src],
+		Location: srcLocation,
 		Path:     []rune{},
+		RunScore: 0,
 	})
 
 	type deltaAndDirection struct {
@@ -227,19 +168,31 @@ func navigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, directionRanks map[r
 		{Delta: vec2{1, 0}, Direction: 'v'},
 	}
 
+	options := navigationOptionList{}
+
+	targetPathLength := srcLocation.Distance(dstLocation)
+	targetRunScore := (int(math.Abs(float64(srcLocation[0]-dstLocation[0]))) - 1 +
+		int(math.Abs(float64(srcLocation[1]-dstLocation[1]))) - 1)
+
 	for frontier.Len() > 0 {
 		state, ok := frontier.Pop()
 		if !ok {
 			break
 		}
 
+		if len(state.Path) > targetPathLength {
+			continue
+		}
+
+		if len(state.Path) == targetPathLength && state.RunScore < targetRunScore {
+			continue
+		}
+
 		if key, ok := locationToKey[state.Location]; !ok {
 			continue
 		} else if key == dst {
-			if src == '3' && dst == '7' {
-				return []rune{'<', '<', '^', '^'}
-			}
-			return state.Path
+			options = append(options, state.Path)
+			continue
 		}
 
 		for _, d := range deltas {
@@ -249,90 +202,12 @@ func navigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, directionRanks map[r
 			frontier.Push(searchState{
 				Location: newLocation,
 				Path:     newPath,
+				RunScore: getPathRunScore(newPath),
 			})
 		}
 	}
 
-	return []rune{}
-}
-
-func refinedNavigateFromSrcKeyToDstKey(keyLocations map[rune]vec2, translationLookup keyToKeyNavigationLookup, src rune, dst rune) []rune {
-	locationToKey := map[vec2]rune{}
-	for key, location := range keyLocations {
-		locationToKey[location] = key
-	}
-
-	type searchState struct {
-		Location        vec2
-		Path            []rune
-		TranslationCost int
-	}
-
-	cmpSearchState := func(a searchState, b searchState) bool {
-		if len(a.Path) != len(b.Path) {
-			return len(a.Path) < len(b.Path)
-		}
-
-		runScoreA := getPathRunScore(a.Path)
-		runScoreB := getPathRunScore(b.Path)
-
-		if len(a.Path) == 0 {
-			return false
-		}
-
-		if runScoreA != runScoreB {
-			return runScoreA > runScoreB
-		}
-
-		return a.TranslationCost < b.TranslationCost
-	}
-
-	frontier := queue.NewPriority[searchState](cmpSearchState)
-	frontier.Push(searchState{
-		Location:        keyLocations[src],
-		Path:            []rune{},
-		TranslationCost: 0,
-	})
-
-	type deltaAndDirection struct {
-		Delta     vec2
-		Direction rune
-	}
-	deltas := []deltaAndDirection{
-		{Delta: vec2{-1, 0}, Direction: '^'},
-		{Delta: vec2{1, 0}, Direction: 'v'},
-		{Delta: vec2{0, -1}, Direction: '<'},
-		{Delta: vec2{0, 1}, Direction: '>'},
-	}
-
-	for frontier.Len() > 0 {
-		state, ok := frontier.Pop()
-		if !ok {
-			break
-		}
-
-		if key, ok := locationToKey[state.Location]; !ok {
-			continue
-		} else if key == dst {
-			if src == '3' && dst == '7' {
-				return []rune{'<', '<', '^', '^'}
-			}
-			return state.Path
-		}
-
-		for _, d := range deltas {
-			newLocation := state.Location.Plus(d.Delta)
-			newPath := append([]rune{}, state.Path...)
-			newPath = append(newPath, d.Direction)
-			frontier.Push(searchState{
-				Location:        newLocation,
-				Path:            newPath,
-				TranslationCost: getTranslationCost(translationLookup, newPath, 2),
-			})
-		}
-	}
-
-	return []rune{}
+	return options
 }
 
 func getPathRunScore(path []rune) int {
@@ -351,62 +226,124 @@ func getPathRunScore(path []rune) int {
 	return score
 }
 
-func getTranslationCost(translationLookup keyToKeyNavigationLookup, newPath []rune, layersOfTranslation int) int {
-	sequence := append([]rune{}, newPath...)
-	for range layersOfTranslation {
-		sequence = findSequenceOfKeyPressesToAchieveRemoteSequence(sequence, translationLookup)
-	}
-
-	return len(sequence)
+type mappingLayer struct {
+	Transformation keyToKeyNavigationOptionsLookup
+	Cache          map[string][]rune
 }
 
-func findSequenceToEnterCode(
-	numberPadNavigations keyToKeyNavigationLookup,
-	directionPadNavigations keyToKeyNavigationLookup,
+func findFinalSequenceLengthToEnterCode(
+	numberPadNavigationOptions keyToKeyNavigationOptionsLookup,
+	directionPadNavigationOptions keyToKeyNavigationOptionsLookup,
 	code unlockCode) []rune {
 
-	mappingLayers := []keyToKeyNavigationLookup{
-		numberPadNavigations,
-		directionPadNavigations,
-		directionPadNavigations,
+	mappingLayers := []mappingLayer{
+		{Transformation: numberPadNavigationOptions, Cache: map[string][]rune{}},
+		{Transformation: directionPadNavigationOptions, Cache: map[string][]rune{}},
+		{Transformation: directionPadNavigationOptions, Cache: map[string][]rune{}},
 	}
 
-	nextSequence := []rune(code)
-	for _, transformation := range mappingLayers {
+	primeCaches(mappingLayers, 0, code)
 
-		// fmt.Printf("\tremoteSequence: %v\n", string(nextSequence))
-
-		nextSequence = findSequenceOfKeyPressesToAchieveRemoteSequence(
-			nextSequence, transformation)
-
-	}
-	// fmt.Printf("\tfinalSequence : %v\n", string(nextSequence))
-
-	return nextSequence
+	return recreateFinalSequence(code, mappingLayers, 0)
 }
 
-func findSequenceOfKeyPressesToAchieveRemoteSequence(
-	remoteSequence []rune,
-	keyToKeyNavigations keyToKeyNavigationLookup) []rune {
+func primeCaches(
+	mappingLayers []mappingLayer,
+	currentLayer int,
+	remoteSequence []rune) []rune {
 
-	sequenceOfSequences := make([][]rune, 0, len(remoteSequence))
-	remoteCurrentKey := 'A'
+	if currentLayer >= len(mappingLayers) {
+		return []rune{}
+	}
+
+	layer := mappingLayers[currentLayer]
+	key := string(remoteSequence)
+
+	if sequence, ok := layer.Cache[key]; ok {
+		fmt.Printf("remoteSequence: % 10s | resultingSequence: % 20s (cache hit)\n", string(remoteSequence), string(sequence))
+
+		return sequence
+	}
+
+	candidateSequences := generateLocalSequenceCombinations(remoteSequence, 0, layer)
+
+	for _, candidateSequence := range candidateSequences {
+		
+	}
+
+
+	finalSequence := []rune{}
+	currentRemoteKey := 'A'
+	bestLevelAboveSequenceLengthLen := 999_999
 	for _, element := range remoteSequence {
-		subsequence := []rune{}
-		subsequence = append(subsequence, keyToKeyNavigations[remoteCurrentKey][element]...)
-		remoteCurrentKey = element
-		subsequence = append(subsequence, 'A')
+		bestLocalSequence := append([]rune{}, layer.Transformation[currentRemoteKey][element][0]...)
+		bestLocalSequence = append(bestLocalSequence, 'A')
+		for _, candidate := range layer.Transformation[currentRemoteKey][element] {
+			candidateLocalSequence := append([]rune{}, candidate...)
+			candidateLocalSequence = append(candidateLocalSequence, 'A')
+			levelAboveSequence := primeCaches(mappingLayers, currentLayer+1, candidateLocalSequence)
 
-		// fmt.Printf("\tSequence to press %c:\n", element)
-		// fmt.Printf("\t -> %s\n", string(subsequence))
+			if len(levelAboveSequence) < bestLevelAboveSequenceLengthLen {
+				bestLocalSequence = candidateLocalSequence
+				bestLevelAboveSequenceLengthLen = len(levelAboveSequence)
+			}
+		}
 
-		sequenceOfSequences = append(sequenceOfSequences, subsequence)
+		finalSequence = append(finalSequence, bestLocalSequence...)
+
+		currentRemoteKey = element
 	}
 
-	flattenedSequence := []rune{}
-	for _, subsequence := range sequenceOfSequences {
-		flattenedSequence = append(flattenedSequence, subsequence...)
+	layer.Cache[key] = finalSequence
+
+	fmt.Printf("remoteSequence: % 10s | resultingSequence: % 20s\n", string(remoteSequence), string(finalSequence))
+
+	return finalSequence
+}
+
+func recreateFinalSequence(remoteSequence []rune, layers []mappingLayer, i int) []rune {
+	fmt.Printf("layer %d, remoteSequence: '%s'\n", i, string(remoteSequence))
+	for key, result := range layers[i].Cache {
+		fmt.Printf("\t%s -> %s\n", key, string(result))
 	}
 
-	return flattenedSequence
+	if i >= len(layers) {
+		return remoteSequence
+	}
+
+	localSequence := layers[i].Cache[string(remoteSequence)]
+
+	return recreateFinalSequence(localSequence, layers, i+1)
+}
+
+func generateLocalSequenceCombinations(remoteSequence []rune, i int, layer mappingLayer) [][]rune {
+	if i >= len(remoteSequence) {
+		return [][]rune{}
+	}
+
+	sequencesSoFar := [][]rune{}
+	remoteSrc := 'A'
+	remoteDst := remoteSequence[i]
+	if i > 0 {
+		remoteSrc = remoteSequence[i - 1]
+	}
+
+	for _, navigationOption := range layer.Transformation[remoteSrc][remoteDst] {
+		navigation := append([]rune{}, navigationOption...)
+		navigation = append(navigation, 'A')
+		sequencesSoFar = append(sequencesSoFar, navigation)
+	}
+
+	sequenceSuffixes := generateLocalSequenceCombinations(remoteSequence, i+1, layer)
+
+	finalSequences := make([][]rune, 0, len(sequencesSoFar) * len(sequenceSuffixes))
+	for _, sequenceSoFar := range sequencesSoFar {
+		for _, suffix := range sequenceSuffixes {
+			sequence := append([]rune{}, sequenceSoFar...)
+			sequence = append(sequence, suffix...)
+			finalSequences = append(finalSequences, sequence)
+		}
+	}
+
+	return finalSequences
 }

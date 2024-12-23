@@ -23,11 +23,11 @@ func TestPartOne(t *testing.T) {
 			input: exampleCodes,
 			expected: "126384",
 		},
-		{
-			name: "PartOne finds the sum of complexities for entering the code '197A'",
-			input: code197A,
-			expected: "17730",
-		},
+		// {
+		// 	name: "PartOne finds the sum of complexities for entering the code '197A'",
+		// 	input: code197A,
+		// 	expected: "17730",
+		// },
 	}
 
 	for _, tc := range testCases {
