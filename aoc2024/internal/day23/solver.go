@@ -213,7 +213,10 @@ func findCliquesWithAtLeastOneNameWithPrefix(
  * 3 times as slow as my naive find-all-cliques-of-size-N approach. I think
  * It's because that approach starts (somewhat greedily) with the highest
  * degree of any vertex and works down, while Bron-Kerbosh will find all
- * maximal cliques of any size. I do wonder if we can tune Bron-Kerbosch to
+ * maximal cliques of any size; this worked for the AoC inputs because they
+ * produced graphs where all vertices had a similar degree and the whole graph was
+ * essentially cliques of similar size joined together.
+ *I do wonder if we can tune Bron-Kerbosch to
  * get more speedup using the maximum degree as a hint (Wikipedia does
  * mention a degeneracy ordering of the graph, after all).
  * I also find it curious that my implementation is "slow" compared to others.
