@@ -14,16 +14,23 @@ type Solver struct{}
 func (s *Solver) SolvePartOne(input string) (string, error) {
 	codes := parseCodes(input)
 
-	totalComplexity, err := findComplexityScoreOfEnteringCodes(codes)
+	totalComplexity, err := findComplexityScoreOfEnteringCodes(codes, 3)
 	if err != nil {
 		return "", err
 	}
 
-	return strconv.FormatInt(totalComplexity, 10), nil
+	return fmt.Sprintf("%d", totalComplexity), nil
 }
 
 func (s *Solver) SolvePartTwo(input string) (string, error) {
-	return "", fmt.Errorf("part 2 not implemented")
+	codes := parseCodes(input)
+
+	totalComplexity, err := findComplexityScoreOfEnteringCodes(codes, 26)
+	if err != nil {
+		return "", err
+	}
+
+	return fmt.Sprintf("%d", totalComplexity), nil
 }
 
 type vec2 [2]int
@@ -62,16 +69,6 @@ func parseCodes(input string) []unlockCode {
 	return codes
 }
 
-const (
-	numberKeypadLayout = `789
-456
-123
- 0A`
-
-	directionalKeypadLayout = ` ^A
-<v>`
-)
-
 var numberKeyLocations map[rune]vec2 = map[rune]vec2{
 	'7': {0, 0},
 	'8': {0, 1},
@@ -94,7 +91,7 @@ var directionalKeyLocations map[rune]vec2 = map[rune]vec2{
 	'>': {1, 2},
 }
 
-func findComplexityScoreOfEnteringCodes(codes []unlockCode, nRobots int) (int64, error) {
+func findComplexityScoreOfEnteringCodes(codes []unlockCode, nDirectionPadLayers int) (int64, error) {
 	numberPadNavigationOptions := newKeyToNavigationMap(numberKeyLocations)
 	directionPadNavigationOptions := newKeyToNavigationMap(directionalKeyLocations)
 
@@ -105,19 +102,16 @@ func findComplexityScoreOfEnteringCodes(codes []unlockCode, nRobots int) (int64,
 			return 0, err
 		}
 
-		sequence := findFinalSequenceLengthToEnterCode(numberPadNavigationOptions, directionPadNavigationOptions, code)
+		sequenceLength := findFinalSequenceLengthToEnterCode(
+			numberPadNavigationOptions,
+			directionPadNavigationOptions,
+			nDirectionPadLayers,
+			code)
 
-		totalComplexity += value * int64(len(sequence))
-
-		// fmt.Printf("totalComplexity: %v (= %d * %d)\n", totalComplexity, value, len(sequence))
+		totalComplexity += value * int64(sequenceLength)
 	}
 
 	return totalComplexity, nil
-}
-
-type keypadSim struct {
-	NavigationOptions keyToKeyNavigationOptionsLookup
-	KeyLocations      map[rune]vec2
 }
 
 type keyToKeyNavigationOptionsLookup map[rune]keyToNavigationOptionsLookup
@@ -239,14 +233,16 @@ func getPathRunScore(path []rune) int {
 	return score
 }
 
-type keypadLayer struct {
-	Keypad keypadSim
-	cache  map[string]transformationCacheEntry
+type transformationLayer struct {
+	Transformation keyToKeyNavigationOptionsLookup
+	Cache          transformationCache
 }
 
-type mappingLayer struct {
-	Transformation keyToKeyNavigationOptionsLookup
-	Cache          map[string]transformationCacheEntry
+type transformationCache map[transformationCacheKey]transformationCacheEntry
+
+type transformationCacheKey struct {
+	RemoteSequence string
+	StartKey       rune
 }
 
 type transformationCacheEntry struct {
@@ -257,28 +253,40 @@ type transformationCacheEntry struct {
 func findFinalSequenceLengthToEnterCode(
 	numberPadNavigationOptions keyToKeyNavigationOptionsLookup,
 	directionPadNavigationOptions keyToKeyNavigationOptionsLookup,
-	code unlockCode) []rune {
+	nDirectionPadLayers int,
+	code unlockCode) int {
 
-	mappingLayers := []mappingLayer{
-		{Transformation: numberPadNavigationOptions, Cache: map[string]transformationCacheEntry{}},
-		{Transformation: directionPadNavigationOptions, Cache: map[string]transformationCacheEntry{}},
-		{Transformation: directionPadNavigationOptions, Cache: map[string]transformationCacheEntry{}},
+	mappingLayers := []transformationLayer{
+		{Transformation: numberPadNavigationOptions, Cache: transformationCache{}},
+	}
+
+	for range nDirectionPadLayers - 1 {
+		mappingLayers = append(mappingLayers, transformationLayer{
+			Transformation: directionPadNavigationOptions,
+			Cache:          transformationCache{},
+		})
 	}
 
 	primeCaches(mappingLayers, code)
 
-	return recreateFinalSequence(code, mappingLayers)
+	return getFinalSequenceLength(code, mappingLayers)
 }
 
-func primeCaches(mappingLayers []mappingLayer, remoteSequence []rune) {
+func primeCaches(mappingLayers []transformationLayer, remoteSequence []rune) {
 	type stackFrame struct {
 		RemoteSequence []rune
-		I              int
+		StartKey       rune
+		LayerIndex     int
 		Visited        bool
 	}
 
 	stack := queue.NewLifo[stackFrame]()
-	stack.Push(stackFrame{RemoteSequence: remoteSequence, I: 0, Visited: false})
+	stack.Push(stackFrame{
+		RemoteSequence: remoteSequence,
+		StartKey:       'A',
+		LayerIndex:     0,
+		Visited:        false,
+	})
 
 	for stack.Len() > 0 {
 		frame, ok := stack.Pop()
@@ -286,109 +294,161 @@ func primeCaches(mappingLayers []mappingLayer, remoteSequence []rune) {
 			break
 		}
 
-		if frame.I >= len(mappingLayers) {
+		if frame.LayerIndex >= len(mappingLayers) {
 			continue
 		}
 
-		layer := &(mappingLayers[frame.I])
+		layer := &(mappingLayers[frame.LayerIndex])
 
-		if _, ok := layer.Cache[string(frame.RemoteSequence)]; ok {
+		cacheKey := transformationCacheKey{
+			RemoteSequence: string(frame.RemoteSequence),
+			StartKey:       frame.StartKey,
+		}
+		if _, ok := layer.Cache[cacheKey]; ok {
 			continue
 		}
 
 		candidateSequences := generateLocalSequenceCombinations(frame.RemoteSequence, layer)
 
 		if frame.Visited {
-			bestCandidate := candidateSequences[0]
-			bestEndSequenceLength := math.MaxInt
-			if frame.I < len(mappingLayers)-1 {
+			if frame.LayerIndex < len(mappingLayers)-1 {
+				bestCandidate := candidateSequences[0]
+				bestEndSequenceLength := math.MaxInt
 				for _, candidate := range candidateSequences {
-					if cacheEntry, ok := mappingLayers[frame.I+1].Cache[string(candidate)]; ok && cacheEntry.EndSequenceLength < bestEndSequenceLength {
-						bestEndSequenceLength = cacheEntry.EndSequenceLength
+					resultingEndLength := 0
+					for j, subsequence := range candidate {
+						startKey := 'A'
+						if frame.LayerIndex == 0 && j > 0 {
+							startKey = frame.RemoteSequence[j-1]
+						}
+
+						key := transformationCacheKey{
+							RemoteSequence: string(subsequence),
+							StartKey:       startKey,
+						}
+
+						cacheEntry, ok := mappingLayers[frame.LayerIndex+1].Cache[key]
+						if !ok {
+							panic("how was the cache not primed?")
+						}
+
+						resultingEndLength += cacheEntry.EndSequenceLength
+					}
+
+					if resultingEndLength < bestEndSequenceLength {
+						bestEndSequenceLength = resultingEndLength
 						bestCandidate = candidate
 					}
 				}
+
+				layer.Cache[cacheKey] = transformationCacheEntry{
+					Sequence:          flattenSequenceOfSubsequences(bestCandidate),
+					EndSequenceLength: bestEndSequenceLength,
+				}
 			} else {
-				bestEndSequenceLength = len(bestCandidate)
+				bestCandidate := flattenSequenceOfSubsequences(candidateSequences[0])
+				bestEndSequenceLength := len(bestCandidate)
 				for _, candidate := range candidateSequences {
-					if len(candidate) < len(bestCandidate) {
-						bestCandidate = candidate
+					flattenedCandidate := flattenSequenceOfSubsequences(candidate)
+					if len(flattenedCandidate) < len(bestCandidate) {
+						bestCandidate = flattenedCandidate
 						bestEndSequenceLength = len(bestCandidate)
 					}
 				}
+
+				layer.Cache[cacheKey] = transformationCacheEntry{
+					Sequence:          bestCandidate,
+					EndSequenceLength: bestEndSequenceLength,
+				}
 			}
 
-			layer.Cache[string(frame.RemoteSequence)] = transformationCacheEntry{
-				Sequence:          bestCandidate,
-				EndSequenceLength: bestEndSequenceLength,
-			}
 			continue
 		}
 
 		frame.Visited = true
-		stack.Push(stackFrame{RemoteSequence: frame.RemoteSequence, I: frame.I, Visited: true})
+		stack.Push(stackFrame{
+			RemoteSequence: frame.RemoteSequence,
+			StartKey:       frame.StartKey,
+			LayerIndex:     frame.LayerIndex,
+			Visited:        true,
+		})
 
 		for _, candidate := range candidateSequences {
-			localSequence := append(make([]rune, 0, len(candidate)), candidate...)
+			for j, subsequence := range candidate {
+				startKey := 'A'
+				if frame.LayerIndex == 0 && j > 0 {
+					startKey = frame.RemoteSequence[j-1]
+				}
 
-			stack.Push(stackFrame{
-				RemoteSequence: localSequence,
-				I:              frame.I + 1,
-				Visited:        false,
-			})
+				localSequence := append(make([]rune, 0, len(subsequence)), subsequence...)
+				stack.Push(stackFrame{
+					RemoteSequence: localSequence,
+					StartKey:       startKey,
+					LayerIndex:     frame.LayerIndex + 1,
+					Visited:        false,
+				})
+			}
 		}
 	}
 }
 
-func generateLocalSequenceCombinations(remoteSequence []rune, layer *mappingLayer) [][]rune {
+func generateLocalSequenceCombinations(remoteSequence []rune, layer *transformationLayer) [][][]rune {
 	type stackFrame struct {
-		I        int
-		Sequence []rune
+		LayerIndex int
+		Sequence   [][]rune
 	}
 
 	stack := queue.NewLifo[stackFrame]()
-	stack.Push(stackFrame{I: 0, Sequence: []rune{}})
+	stack.Push(stackFrame{LayerIndex: 0, Sequence: [][]rune{}})
 
-	combinations := [][]rune{}
+	combinations := [][][]rune{}
 	for stack.Len() > 0 {
 		frame, ok := stack.Pop()
 		if !ok {
 			break
 		}
 
-		if frame.I >= len(remoteSequence) {
+		if frame.LayerIndex >= len(remoteSequence) {
 			combinations = append(combinations, frame.Sequence)
 			continue
 		}
 
 		remoteSrc := 'A'
-		remoteDst := remoteSequence[frame.I]
-		if frame.I > 0 {
-			remoteSrc = remoteSequence[frame.I-1]
+		remoteDst := remoteSequence[frame.LayerIndex]
+		if frame.LayerIndex > 0 {
+			remoteSrc = remoteSequence[frame.LayerIndex-1]
 		}
 
 		for _, candidate := range layer.Transformation[remoteSrc][remoteDst] {
-			extendedSequence := append(make([]rune, 0, len(frame.Sequence)+len(candidate)+1), frame.Sequence...)
-			extendedSequence = append(extendedSequence, candidate...)
-			extendedSequence = append(extendedSequence, 'A')
+			extendedSequence := append(make([][]rune, 0, len(frame.Sequence)+len(candidate)+1), frame.Sequence...)
+			nextSubsequence := append(make([]rune, 0, len(candidate)), candidate...)
+			nextSubsequence = append(nextSubsequence, 'A')
+			extendedSequence = append(extendedSequence, nextSubsequence)
 
-			stack.Push(stackFrame{I: frame.I + 1, Sequence: extendedSequence})
+			stack.Push(stackFrame{LayerIndex: frame.LayerIndex + 1, Sequence: extendedSequence})
 		}
 	}
 
 	return combinations
 }
 
-func recreateFinalSequence(remoteSequence []rune, layers []mappingLayer) []rune {
-	sequence := remoteSequence
-	for i := range len(layers) {
-		// fmt.Printf("%d: %s\n", i, string(sequence))
-		// for key, value := range layers[i].Cache {
-		// 	fmt.Printf("\t%s -> (%d) %s\n", string(key), value.EndSequenceLength, string(value.Sequence))
-		// }
-
-		sequence = layers[i].Cache[string(sequence)].Sequence
+func getFinalSequenceLength(remoteSequence []rune, primedLayers []transformationLayer) int {
+	cacheKey := transformationCacheKey{
+		RemoteSequence: string(remoteSequence),
+		StartKey:       'A',
+	}
+	entry, ok := primedLayers[0].Cache[cacheKey]
+	if !ok {
+		panic("the caches must not be primed...")
 	}
 
-	return sequence
+	return entry.EndSequenceLength
+}
+
+func flattenSequenceOfSubsequences(s [][]rune) []rune {
+	flattenedSequence := make([]rune, 0, len(s)*20)
+	for _, subsequence := range s {
+		flattenedSequence = append(flattenedSequence, subsequence...)
+	}
+	return flattenedSequence
 }
