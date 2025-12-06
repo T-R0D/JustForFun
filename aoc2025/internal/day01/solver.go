@@ -53,13 +53,13 @@ func (this *Solver) SolvePartTwo(input string) (string, error) {
 		if instr.direction == left {
 			currentPosition = (currentPosition + dialNotches - clicks) % dialNotches
 
-			if (previousPosition < currentPosition || currentPosition == dialZero) && previousPosition != dialZero {
+			if (currentPosition > previousPosition && previousPosition != dialZero) || currentPosition == dialZero  {
 				timesPointedAtZero += 1
 			}
 		} else {
 			currentPosition = (currentPosition + clicks) % dialNotches
 
-			if (previousPosition > currentPosition || currentPosition == dialZero) && previousPosition != dialZero {
+			if previousPosition > currentPosition || currentPosition == dialZero {
 				timesPointedAtZero += 1
 			}
 		}
