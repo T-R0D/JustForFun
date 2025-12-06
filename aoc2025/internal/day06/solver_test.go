@@ -5,11 +5,17 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "Part one computes the checksum properly for given problems in human arithmetic",
+			input:    testWorksheet,
+			expected: "4277556",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -30,11 +36,17 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "Part two computes the checksum properly for given problems in cephalopod arithmetic",
+			input:    testWorksheet,
+			expected: "3263827",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -53,3 +65,8 @@ func TestPartTwo(t *testing.T) {
 		})
 	}
 }
+
+const testWorksheet = `123 328  51 64 
+ 45 64  387 23 
+  6 98  215 314
+*   +   *   +  `
