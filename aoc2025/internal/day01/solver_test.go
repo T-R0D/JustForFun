@@ -46,11 +46,6 @@ func TestPartTwo(t *testing.T) {
 			input:    testInput,
 			expected: "6",
 		},
-		// {
-		// 	name: "A big rotation counts multiple zeroes",
-		// 	input: "R1000",
-		// 	expected: "10",
-		// },
 	}
 
 	for _, tc := range testCases {
