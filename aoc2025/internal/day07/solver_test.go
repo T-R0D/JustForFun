@@ -5,11 +5,17 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "Part one counts tachyon beam splits in a manifold",
+			input:    sampleManifold,
+			expected: "21",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -30,11 +36,17 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+				{
+			name:     "Part two counts tachyon beam timelines in a manifold",
+			input:    sampleManifold,
+			expected: "40",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -53,3 +65,20 @@ func TestPartTwo(t *testing.T) {
 		})
 	}
 }
+
+const sampleManifold = `.......S.......
+...............
+.......^.......
+...............
+......^.^......
+...............
+.....^.^.^.....
+...............
+....^.^...^....
+...............
+...^.^...^.^...
+...............
+..^...^.....^..
+...............
+.^.^.^.^.^...^.
+...............`
