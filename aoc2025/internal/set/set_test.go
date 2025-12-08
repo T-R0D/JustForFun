@@ -99,3 +99,26 @@ func TestSetIsIterable(t *testing.T) {
 		t.Errorf("Iteration did not produce precisely the values added to the set")
 	}
 }
+
+func TestUnionProducesTheUnionOfTwoSets(t *testing.T) {
+	a := New[int]()
+	b := New[int]()
+
+	a.Add(1)
+	a.Add(2)
+
+	b.Add(2)
+	b.Add(3)
+
+	c := Union(a, b)
+
+	for i := range 3 {
+		if !c.Contains(i + 1) {
+			t.Errorf("Expected union set to contain %d; it did not", i+1)
+		}
+	}
+
+	if c.Contains(5) {
+		t.Errorf("Expected union set not to contain 5; it did")
+	}
+}
