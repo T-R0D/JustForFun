@@ -49,3 +49,17 @@ func (self *Set[T]) All() iter.Seq[T] {
 		}
 	}
 }
+
+func Union[T comparable](a Set[T], b Set[T]) Set[T] {
+	c := New[T]()
+
+	for x := range a.All() {
+		c.Add(x)
+	}
+
+	for x := range b.All() {
+		c.Add(x)
+	}
+
+	return c
+}
