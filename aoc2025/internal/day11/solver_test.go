@@ -9,7 +9,13 @@ func TestPartOne(t *testing.T) {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name: "Part one counts the total paths in the system from 'you' to 'out'",
+			input: exampleOneServerMapping,
+			expected: "5",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -34,7 +40,13 @@ func TestPartTwo(t *testing.T) {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name: "Part two counts the total paths in the system from 'you' to 'out' that include both 'dac' and 'fft'",
+			input: exampleTwoServerMapping,
+			expected: "2",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -53,3 +65,28 @@ func TestPartTwo(t *testing.T) {
 		})
 	}
 }
+
+const exampleOneServerMapping = `aaa: you hhh
+you: bbb ccc
+bbb: ddd eee
+ccc: ddd eee fff
+ddd: ggg
+eee: out
+fff: out
+ggg: out
+hhh: ccc fff iii
+iii: out`
+
+const exampleTwoServerMapping = `svr: aaa bbb
+aaa: fft
+fft: ccc
+bbb: tty
+tty: ccc
+ccc: ddd eee
+ddd: hub
+hub: fff
+eee: dac
+dac: fff
+fff: ggg hhh
+ggg: out
+hhh: out`
