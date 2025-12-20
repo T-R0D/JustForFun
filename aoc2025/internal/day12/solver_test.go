@@ -5,11 +5,17 @@ import (
 )
 
 func TestPartOne(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
-	}{}
+	}{
+		{
+			name:     "Part one counts valid tree area configurations",
+			input:    sampleSpecs,
+			expected: "2",
+		},
+	}
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
@@ -30,7 +36,7 @@ func TestPartOne(t *testing.T) {
 }
 
 func TestPartTwo(t *testing.T) {
-	testCases := []struct{
+	testCases := []struct {
 		name     string
 		input    string
 		expected string
@@ -53,3 +59,37 @@ func TestPartTwo(t *testing.T) {
 		})
 	}
 }
+
+const sampleSpecs = `0:
+###
+##.
+##.
+
+1:
+###
+##.
+.##
+
+2:
+.##
+###
+##.
+
+3:
+##.
+###
+##.
+
+4:
+###
+#..
+###
+
+5:
+###
+.#.
+###
+
+4x4: 0 0 0 0 2 0
+12x5: 1 0 1 0 2 2
+12x5: 1 0 1 0 3 2`
