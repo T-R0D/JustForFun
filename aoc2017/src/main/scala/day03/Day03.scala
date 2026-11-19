@@ -86,7 +86,7 @@ class Day03Solution extends Solution:
                         if (di != 0 || dj != 0)
                 yield
                     discovered.getOrElse((i + di, j + dj), 0)
-            ).sum()
+            ).sum
 
         if (currentValue > target) then
             currentValue
