@@ -4,133 +4,202 @@ import scala.util.{Try}
 
 import solution.Solution
 
-class Day24Solution extends Solution {
-    override def partOne(input: String): Either[String, String] = {
-        val results = parseBridgeSegments(input)
-        results match
-            case Left(errors) => Left(errors.mkString("; ")) 
-            case Right(segments) => {
-                val s = segments.sortBy(_.start)
-                for {
-                    (a, i) <- s.zipWithIndex
-                    (b, j) <- s.zipWithIndex
-                    if i != j && a.end == b.start
-                } do {
-                    println(s"$i[${a.start}/${a.end}] --> $j[${b.start}/${b.end}]")
-                }
+class Day24Solution extends Solution:
+  override def partOne(input: String): Either[String, String] =
+    val sortedSegments = parseInput(input)
+    val graph = buildGraph(sortedSegments)
+    val strongestStrength = findStrongestBridgeStrength(sortedSegments, graph)
+    Right(strongestStrength.toString)
 
-                Left("not done")
-            }
-    }
+  override def partTwo(input: String): Either[String, String] =
+    val sortedSegments = parseInput(input)
+    val graph = buildGraph(sortedSegments)
+    val strongestStrength =
+      findStrongestLongestBridgeStrength(sortedSegments, graph)
+    Right(strongestStrength.toString)
 
-    override def partTwo(input: String): Either[String, String] = ???
+  case class Segment(start: Int, end: Int)
 
-    case class Segment(start: Int, end: Int)
+  enum Orientation:
+    case Forward, Reversed, Nil
 
-    def parseBridgeSegments(input: String): Either[Seq[String], Seq[Segment]] = {
-        val results = (
-            for {
-                (line, i) <- input.split("\\n").zipWithIndex
-            } yield {
-                Try {
-                    val parts = line.split("/").map(_.toInt)
-                    Segment(parts(0), parts(1))
-                }.toEither.left.map(t => s"line $i: $t")
-            }
+  def parseInput(input: String): Seq[Segment] =
+    input.linesIterator
+      .map(line => {
+        val parts = line.split("/").map(_.toInt)
+        Segment(parts(0), parts(1))
+      })
+      .toSeq
+      .sortBy(_.start)
+
+  def buildGraph(
+      segments: Seq[Segment]
+  ): Seq[Seq[(Orientation, Orientation)]] =
+    for src <- segments
+    yield
+      for dst <- segments
+      yield
+        if src == dst then (Orientation.Nil, Orientation.Nil)
+        else
+          val nextOrientationIfForward = if src.end == dst.start then
+            Orientation.Forward
+          else if src.end == dst.end then Orientation.Reversed
+          else Orientation.Nil
+
+          val nextOrientationIfReversed = if src.start == dst.start then
+            Orientation.Forward
+          else if src.start == dst.end then Orientation.Reversed
+          else Orientation.Nil
+
+          (nextOrientationIfForward, nextOrientationIfReversed)
+
+  def findStrongestBridgeStrength(
+      sortedSegments: Seq[Segment],
+      graph: Seq[Seq[(Orientation, Orientation)]]
+  ): Int =
+    val viableStartSegments =
+      sortedSegments.zipWithIndex
+        .filter(s => s._1.start == 0 || s._1.end == 0)
+        .map(_._2)
+
+    val solutions = for
+      srcIndex <- viableStartSegments
+      src = sortedSegments(srcIndex)
+      orientation =
+        if src.start == 0 then Orientation.Forward else Orientation.Reversed
+    yield doFindStrongestBridgeStrength(
+      sortedSegments,
+      graph,
+      srcIndex,
+      orientation,
+      0,
+      Set()
+    )
+
+    solutions.map(_._1).max
+
+  def doFindStrongestBridgeStrength(
+      sortedSegments: Seq[Segment],
+      graph: Seq[Seq[(Orientation, Orientation)]],
+      nextSrc: Int,
+      orientation: Orientation,
+      accStrength: Int,
+      accUsed: Set[Int]
+  ): (Int, Set[Int]) =
+    val src = sortedSegments(nextSrc)
+    val strength = accStrength + src.start + src.end
+    val used = accUsed + nextSrc
+
+    val nextSegmentIndicesAndOrientations = graph(nextSrc)
+      .map(options =>
+        orientation match
+          case Orientation.Forward  => options._1
+          case Orientation.Reversed => options._2
+          case Orientation.Nil      => throw new Error("uh oh")
+      )
+      .zipWithIndex
+      .filter(x =>
+        x._2 != nextSrc && x._1 != Orientation.Nil && !used.contains(x._2)
+      )
+
+    nextSegmentIndicesAndOrientations match
+      case Seq() =>
+        (strength, used)
+
+      case _ =>
+        val solutions =
+          for (nextOrientation, nextSegmentIndex) <-
+              nextSegmentIndicesAndOrientations
+          yield doFindStrongestBridgeStrength(
+            sortedSegments,
+            graph,
+            nextSegmentIndex,
+            nextOrientation,
+            strength,
+            used
+          )
+
+        solutions.reduce((s1, s2) =>
+          if s1._1 > s2._1 then s1
+          else s2
         )
 
-        val failures = results.collect({
-            case Left(value) => value
-        })
-        if !failures.isEmpty then {
-            Left(failures)
-        } else {
-            Right(results.collect({
-                case Right(value) => value
-            }))
-        }
-    }
+  def findStrongestLongestBridgeStrength(
+      sortedSegments: Seq[Segment],
+      graph: Seq[Seq[(Orientation, Orientation)]]
+  ): Int =
+    val viableStartSegments =
+      sortedSegments.zipWithIndex
+        .filter(s => s._1.start == 0 || s._1.end == 0)
+        .map(_._2)
 
-    def findStrongestPossibleBridgeStrength(segments: Seq[Segment]): Int = {
-        val (lookup, graph) = constructGraph(segments)
+    val solutions = for
+      srcIndex <- viableStartSegments
+      src = sortedSegments(srcIndex)
+      orientation =
+        if src.start == 0 then Orientation.Forward else Orientation.Reversed
+    yield doFindStrongestLongestBridgeStrength(
+      sortedSegments,
+      graph,
+      srcIndex,
+      orientation,
+      0,
+      Set()
+    )
 
-        val potentialFirstSegments = lookup.filter(x => x._2.start == 0 || x._2.end == 0)
+    solutions
+      .reduce((s1, s2) =>
+        if s1._2.size > s2._2.size then s1
+        else if s1._2.size < s2._2.size then s2
+        else if s1._1 > s2._1 then s1
+        else s2
+      )
+      ._1
 
-        val bestStrength = potentialFirstSegments
-            .map { (labelAndSegment) =>
-                val segmentsUsed = findStrongestPossibleBridgeStartingWith(lookup, graph, labelAndSegment._1)
-                segmentsUsed.foldLeft(0) { (acc, segmentLabel) =>
-                    val segment = lookup.get(segmentLabel)
-                    segment match
-                        case Some(s) => acc + s.start + s.end
-                    
-                }
-            }
-            .max
+  def doFindStrongestLongestBridgeStrength(
+      sortedSegments: Seq[Segment],
+      graph: Seq[Seq[(Orientation, Orientation)]],
+      nextSrc: Int,
+      orientation: Orientation,
+      accStrength: Int,
+      accUsed: Set[Int]
+  ): (Int, Set[Int]) =
+    val src = sortedSegments(nextSrc)
+    val strength = accStrength + src.start + src.end
+    val used = accUsed + nextSrc
 
-    }
+    val nextSegmentIndicesAndOrientations = graph(nextSrc)
+      .map(options =>
+        orientation match
+          case Orientation.Forward  => options._1
+          case Orientation.Reversed => options._2
+          case Orientation.Nil      => throw new Error("uh oh")
+      )
+      .zipWithIndex
+      .filter(x =>
+        x._2 != nextSrc && x._1 != Orientation.Nil && !used.contains(x._2)
+      )
 
-    def constructGraph(segments: Seq[Segment]): (Map[Int, Segment], Map[Int, Seq[Int]]) = {
-        val lookup = segments.zipWithIndex.map(_.swap).toMap
+    nextSegmentIndicesAndOrientations match
+      case Seq() =>
+        (strength, used)
 
-        val graph = (
-            for {
-                (i, a) <- lookup
-                (j, b) <- lookup
-                if i != j && (a.end == b.start || a.start == b.end)
-            } yield {
-                if a.end == b.start then {
-                    (i, j)
-                } else {
-                    (j, i)
-                }
-            }
-        ).toSeq.groupBy(_._1).mapValues(x => x.map(_._2)).toMap
+      case _ =>
+        val solutions =
+          for (nextOrientation, nextSegmentIndex) <-
+              nextSegmentIndicesAndOrientations
+          yield doFindStrongestLongestBridgeStrength(
+            sortedSegments,
+            graph,
+            nextSegmentIndex,
+            nextOrientation,
+            strength,
+            used
+          )
 
-        (lookup, graph)
-    }
-
-    case class SegmentUsage(label: Int, segment: Segment, reversed: Boolean) {
-        def nextMatch(): Int = {
-            if reversed then {
-                segment.start
-            } else {
-                segment.end
-            }
-        }
-    }
-
-    def findStrongestPossibleBridgeStartingWith(
-        lookup: Map[Int, Segment],
-        graph: Map[Int, Seq[Int]],
-        usedSegments: Seq[SegmentUsage],
-    ): (Seq[Int], Int) = {
-        val recentSegment = usedSegments.last
-        val candidateLabels = graph
-            .getOrElse(recentSegment.label, Seq.empty)
-            .filter { (candidateLabel) =>
-                val candidateSegment = lookup.get(candidateLabel)
-                candidateSegment match {
-                    case None => false
-                    case Some(segment) => !usedSegments.contains(segment)
-                }
-            }
-
-        if candidateLabels.isEmpty then {
-            val s = usedSegments.map(_.segment)
-            (s, scoreBridge(s))
-        } else {
-            candidateLabels.foldLeft(0) { (acc, candidateLabel) =>
-                
-            }
-        }
-    }
-
-    def scoreBridge(segments: Seq[Segment]): Int = {
-        segments.foldLeft(0) { (acc, segment) =>
-            acc + (segment.start + segment.end)
-        }
-    }
-}
-
-        
+        solutions.reduce((s1, s2) =>
+          if s1._2.size > s2._2.size then s1
+          else if s1._2.size < s2._2.size then s2
+          else if s1._1 > s2._1 then s1
+          else s2
+        )

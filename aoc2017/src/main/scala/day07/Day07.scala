@@ -83,7 +83,7 @@ class Day07Solution extends Solution:
                 yield
                     dfs(childName)
 
-            val childTotalWeight = children.map(_.cumulativeWeight).sum()
+            val childTotalWeight = children.map(_.cumulativeWeight).sum
             val cumulativeWeight = weight + childTotalWeight
 
             WeightTreeNode(cumulativeWeight, children)
