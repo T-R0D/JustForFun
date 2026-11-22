@@ -1,1 +1,0 @@
-export const ADVENT_DAYS = 12
