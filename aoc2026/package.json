@@ -1,0 +1,31 @@
+{
+  "name": "aoc2026",
+  "version": "0.0.1",
+  "description": "Advent of Code 2026 solutions",
+  "type": "module",
+  "main": "main.ts",
+  "scripts": {
+    "aoc2026": "npm run build && node dist/main.mjs",
+    "build": "tsdown src/main.ts --platform node",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
+    "format": "prettier --write .",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "start": "node dist/main.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@vitest/coverage-v8": "^5.1.1",
+    "oxlint": "^1.94.0",
+    "prettier": "^3.10.1",
+    "tsdown": "^0.23.7",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vitest": "^5.1.1"
+  },
+  "dependencies": {
+    "cmd-ts": "^0.15.0"
+  }
+}
