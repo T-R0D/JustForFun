@@ -37,21 +37,21 @@ function main() {
   const solve = command({
     name: "solve",
     args: {
-        day: option({
-            type: DayNumber,
-            long: "day",
-            description: "Which day's solution to run.",
-        }),
-        part: option({
-            type: PartNumber,
-            long: "part",
-            description: "Which part of the solution to run.",
-        }),
-        inputFilePath: option({
-          type: string,
-          long: "inputFilePath",
-          description: "Path to the file to read for problem input.",
-        }),
+      day: option({
+        type: DayNumber,
+        long: "day",
+        description: "Which day's solution to run.",
+      }),
+      part: option({
+        type: PartNumber,
+        long: "part",
+        description: "Which part of the solution to run.",
+      }),
+      inputFilePath: option({
+        type: string,
+        long: "inputFilePath",
+        description: "Path to the file to read for problem input.",
+      }),
     },
     handler: ({ inputFilePath, day, part }) => {
       handleSolve({ inputFilePath, day, part })

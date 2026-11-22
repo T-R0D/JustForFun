@@ -1,5 +1,4 @@
-import { assert, describe, expect, it, vi } from "vitest"
-import { Result } from "../result"
+import { describe, expect, it } from "vitest"
 import { Solver } from "./solver"
 
 describe("Solver", () => {

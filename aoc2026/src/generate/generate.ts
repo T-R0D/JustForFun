@@ -16,39 +16,37 @@ export function generateSolutionSkeletons(
     })
   }
 
-  const makeResults = range({ start: 1, stop: ADVENT_DAYS + 1 }).map(
-    (day) => {
-      const dayStr = day.toString().padStart(2, "0")
+  const makeResults = range({ start: 1, stop: ADVENT_DAYS + 1 }).map((day) => {
+    const dayStr = day.toString().padStart(2, "0")
 
-      return makeDirectory({
-        parentDirectory: targetDir,
-        dirName: `day${dayStr}`,
+    return makeDirectory({
+      parentDirectory: targetDir,
+      dirName: `day${dayStr}`,
+    })
+      .chain((parentDirectory) => {
+        const fileName = "index.ts"
+        const contents = INDEX_CONTENTS
+
+        return makeFile({
+          parentDirectory,
+          fileName,
+          contents,
+        }).map(() => parentDirectory)
       })
-        .chain((parentDirectory) => {
-          const fileName = "index.ts"
-          const contents = INDEX_CONTENTS
+      .chain((parentDirectory) => {
+        const fileName = "solver.ts"
+        const contents = SOLVER_CONTENTS
 
-          return makeFile({
-            parentDirectory,
-            fileName,
-            contents,
-          }).map(() => parentDirectory)
-        })
-        .chain((parentDirectory) => {
-          const fileName = "solver.ts"
-          const contents = SOLVER_CONTENTS
-
-          return makeFile({ parentDirectory, fileName, contents }).map(
-            () => parentDirectory,
-          )
-        })
-        .chain((parentDirectory) => {
-          const fileName = "solver.test.ts"
-          const contents = TEST_CONTENTS
-          return makeFile({ parentDirectory, fileName, contents })
-        })
-    },
-  )
+        return makeFile({ parentDirectory, fileName, contents }).map(
+          () => parentDirectory,
+        )
+      })
+      .chain((parentDirectory) => {
+        const fileName = "solver.test.ts"
+        const contents = TEST_CONTENTS
+        return makeFile({ parentDirectory, fileName, contents })
+      })
+  })
 
   const overallResult = Result.sum(makeResults)
   if (overallResult.isErr()) {
@@ -146,8 +144,4 @@ type GenerationError = {
 }
 
 type GenerationOperation =
-  | "targetCheck"
-  | "dirCreate"
-  | "fileCreate"
-  | "fileWrite"
-  | "cleanup"
+  "targetCheck" | "dirCreate" | "fileCreate" | "fileWrite" | "cleanup"

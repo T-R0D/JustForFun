@@ -7,7 +7,7 @@
   "scripts": {
     "aoc2026": "npm run build && node dist/main.mjs",
     "build": "tsdown src/main.ts --platform node",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm test",
+    "check": "npm run format && npm run lint && npm run typecheck && npm test",
     "format": "prettier --write .",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",

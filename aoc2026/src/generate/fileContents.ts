@@ -14,8 +14,7 @@ export class Solver {
 }
 `
 
-export const TEST_CONTENTS = `import { assert, describe, expect, it, vi } from "vitest"
-import { Result } from "../result"
+export const TEST_CONTENTS = `import { describe, expect, it, } from "vitest"
 import { Solver } from "./solver"
 
 describe("Solver", () => {
