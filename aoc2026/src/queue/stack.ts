@@ -4,7 +4,8 @@ export class Stack<T> {
   readonly #data: T[]
 
   constructor(initialElements?: Iterable<T>) {
-    this.#data = !!initialElements ? Array.from(initialElements) : []
+    this.#data =
+      initialElements !== undefined ? Array.from(initialElements) : []
   }
 
   push(x: T) {
@@ -12,13 +13,14 @@ export class Stack<T> {
   }
 
   pop(): Option<T> {
+    const previousSize = this.#data.length
     const x = this.#data.pop()
-    return !!x ? Option.some(x) : Option.none()
+    return previousSize > 0 ? Option.some(x as T) : Option.none()
   }
 
   peek(): Option<T> {
     const x = this.#data.at(-1)
-    return !!x ? Option.some(x) : Option.none()
+    return this.#data.length > 0 ? Option.some(x as T) : Option.none()
   }
 
   size(): number {

@@ -67,18 +67,18 @@ export class ResultImpl<T, E> {
     }
   }
 
-  readonly #contents: R<T, E>
+  readonly contents: R<T, E>
 
   private constructor(contents: R<T, E>) {
-    this.#contents = contents
+    this.contents = contents
   }
 
   isOk(): this is { readonly contents: Ok<T> } {
-    return this.#contents.kind == "ok"
+    return this.contents.kind == "ok"
   }
 
   isErr(): this is { readonly contents: Err<E> } {
-    return this.#contents.kind == "err"
+    return this.contents.kind == "err"
   }
 
   value(this: { contents: Ok<T> }): T {

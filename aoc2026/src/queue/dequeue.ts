@@ -108,7 +108,6 @@ export class Dequeue<T> {
 
   /** Iterates the dequeue in left to right order. */
   *iter(): Iterable<T> {
-    console.log("inside:", this.#data, `(${this.size()})`)
     for (let i = 0; i < this.size(); i += 1) {
       yield this.#data[
         (this.#start + this.#data.length + i) % this.#data.length
