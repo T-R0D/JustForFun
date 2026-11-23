@@ -1,3 +1,5 @@
+import { Option } from "./option"
+
 type Ok<T> = {
   kind: "ok"
   value: T
@@ -65,18 +67,18 @@ export class ResultImpl<T, E> {
     }
   }
 
-  readonly contents: R<T, E>
+  readonly #contents: R<T, E>
 
   private constructor(contents: R<T, E>) {
-    this.contents = contents
+    this.#contents = contents
   }
 
   isOk(): this is { readonly contents: Ok<T> } {
-    return this.contents.kind == "ok"
+    return this.#contents.kind == "ok"
   }
 
   isErr(): this is { readonly contents: Err<E> } {
-    return this.contents.kind == "err"
+    return this.#contents.kind == "err"
   }
 
   value(this: { contents: Ok<T> }): T {
@@ -119,7 +121,7 @@ export class ResultImpl<T, E> {
     return ResultImpl.ok(f(this.value()))
   }
 
-  chain<T2>(this: Result<T, E>, f: (t: T) => Result<T2, E>): Result<T2, E> {
+  flatMap<T2>(this: Result<T, E>, f: (t: T) => Result<T2, E>): Result<T2, E> {
     if (this.isErr()) {
       return ResultImpl.err(this.error())
     }
@@ -133,6 +135,23 @@ export class ResultImpl<T, E> {
     }
 
     return ResultImpl.err(f(this.error()))
+  }
+
+  /** Convert the result to an option; discards the error if the result is an error. */
+  toOption(this: Result<T, E>): Option<T> {
+    if (this.isErr()) {
+      return Option.none()
+    }
+
+    return Option.some(this.value())
+  }
+
+  invert(this: Result<T, E>): Result<E, T> {
+    if (this.isErr()) {
+      return Result.ok(this.error())
+    }
+
+    return Result.err(this.value())
   }
 
   static sum<T, E>(results: Iterable<Result<T, E>>): Result<T[], E> {

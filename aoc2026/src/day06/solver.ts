@@ -1,4 +1,4 @@
-import { Result } from "../result"
+import { Result } from "../monad"
 
 export class Solver {
   solvePartOne(_input: string): Result<string, any> {
