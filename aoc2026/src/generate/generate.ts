@@ -1,7 +1,7 @@
 import { existsSync, globSync, mkdirSync, rmSync, writeFileSync } from "node:fs"
 import path, { join } from "node:path"
 import { ADVENT_DAYS } from "../constants"
-import { Result } from "../result"
+import { Result } from "../monad"
 import { range } from "../utils"
 import { INDEX_CONTENTS, SOLVER_CONTENTS, TEST_CONTENTS } from "./fileContents"
 
@@ -23,7 +23,7 @@ export function generateSolutionSkeletons(
       parentDirectory: targetDir,
       dirName: `day${dayStr}`,
     })
-      .chain((parentDirectory) => {
+      .flatMap((parentDirectory) => {
         const fileName = "index.ts"
         const contents = INDEX_CONTENTS
 
@@ -33,7 +33,7 @@ export function generateSolutionSkeletons(
           contents,
         }).map(() => parentDirectory)
       })
-      .chain((parentDirectory) => {
+      .flatMap((parentDirectory) => {
         const fileName = "solver.ts"
         const contents = SOLVER_CONTENTS
 
@@ -41,7 +41,7 @@ export function generateSolutionSkeletons(
           () => parentDirectory,
         )
       })
-      .chain((parentDirectory) => {
+      .flatMap((parentDirectory) => {
         const fileName = "solver.test.ts"
         const contents = TEST_CONTENTS
         return makeFile({ parentDirectory, fileName, contents })

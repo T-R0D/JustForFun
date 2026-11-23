@@ -12,7 +12,7 @@ import { Solver as Day09Solver } from "../day09"
 import { Solver as Day10Solver } from "../day10"
 import { Solver as Day11Solver } from "../day11"
 import { Solver as Day12Solver } from "../day12"
-import { Result } from "../result"
+import { Result } from "../monad"
 
 export async function solveProblem({
   day,
@@ -23,7 +23,7 @@ export async function solveProblem({
   part: AdventPartNumber
   inputFilePath: string
 }) {
-  const result = readInput(inputFilePath).chain((input) => {
+  const result = readInput(inputFilePath).flatMap((input) => {
     let solver: SolverT
     if (day === 1) {
       solver = new Day01Solver()

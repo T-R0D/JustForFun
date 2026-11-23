@@ -1,7 +1,7 @@
 export const INDEX_CONTENTS = `export { Solver } from "./solver"
 `
 
-export const SOLVER_CONTENTS = `import { Result } from "../result"
+export const SOLVER_CONTENTS = `import { Result } from "../monad"
 
 export class Solver {
   solvePartOne(_input: string): Result<string, any> {
