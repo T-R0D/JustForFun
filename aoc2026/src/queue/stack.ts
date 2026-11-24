@@ -3,7 +3,7 @@ import { Option } from "../monad"
 export class Stack<T> {
   readonly #data: T[]
 
-  constructor(initialElements?: Iterable<T>) {
+  constructor(initialElements?: IterableIterator<T>) {
     this.#data =
       initialElements !== undefined ? Array.from(initialElements) : []
   }

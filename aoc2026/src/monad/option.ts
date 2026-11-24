@@ -1,51 +1,51 @@
 import { Result } from "./result"
 
 type Some<T> = {
-  kind: "some"
+  readonly kind: "some"
   value: T
 }
 
 type None = {
-  kind: "none"
+  readonly kind: "none"
 }
 
 /** An `Option` known to hold a value. */
-export type SomeOption<T> = OptionImpl<T> & { readonly contents: Some<T> }
+type SomeOption<T> = OptionImpl<T> & Some<T>
 
 /** An `Option` known to hold nothing. */
-export type NoneOption<T> = OptionImpl<T> & { readonly contents: None }
+type NoneOption<T> = OptionImpl<T> & None
 
 export type Option<T> = SomeOption<T> | NoneOption<T>
-
-type O<T> = Some<T> | None
 
 export class OptionImpl<T> {
   /** Construct a filled Option. */
   static some<T>(value: T): SomeOption<T> {
-    return new OptionImpl({ kind: "some", value }) as SomeOption<T>
+    return new OptionImpl("some", value) as SomeOption<T>
   }
 
   /** Construct an empty Option. */
   static none(): NoneOption<never> {
-    return new OptionImpl({ kind: "none" }) as NoneOption<never>
+    return new OptionImpl("none", undefined) as NoneOption<never>
   }
 
-  readonly contents: O<T>
+  readonly kind: "some" | "none"
+  readonly #value: T | undefined
 
-  private constructor(contents: O<T>) {
-    this.contents = contents
+  private constructor(kind: "some" | "none", value: T | undefined) {
+    this.kind = kind
+    this.#value = value
   }
 
-  isSome(): this is { readonly contents: Some<T> } {
-    return this.contents.kind == "some"
+  isSome(): this is { readonly kind: "some" } {
+    return this.kind == "some"
   }
 
-  isNone(): this is { readonly contents: None } {
-    return this.contents.kind == "none"
+  isNone(): this is { readonly kind: "none" } {
+    return this.kind == "none"
   }
 
-  value(this: { contents: Some<T> }): T {
-    return this.contents.value
+  value(this: SomeOption<T>): T {
+    return this.#value as T
   }
 
   unwrap(this: Option<T>): T {
