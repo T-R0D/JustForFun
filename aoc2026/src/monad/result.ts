@@ -1,37 +1,32 @@
 import { Option } from "./option"
 
 type Ok<T> = {
-  kind: "ok"
-  value: T
+  readonly kind: "ok"
+  readonly value: T
 }
 
 type Err<E> = {
-  kind: "err"
-  value: E
+  readonly kind: "err"
+  readonly value: E
 }
 
 /** A `Result` known to hold a successful value. */
-export type OkResult<T, E> = ResultImpl<T, E> & { readonly contents: Ok<T> }
+type OkResult<T, E> = ResultImpl<T, E> & Ok<T>
 
 /** A `Result` known to hold a failure value. */
-export type ErrResult<T, E> = ResultImpl<T, E> & { readonly contents: Err<E> }
+type ErrResult<T, E> = ResultImpl<T, E> & Err<E>
 
 export type Result<T, E> = OkResult<T, E> | ErrResult<T, E>
-
-type R<T, E> = Ok<T> | Err<E>
 
 export class ResultImpl<T, E> {
   /** Construct a successful result with the given value. */
   static ok<T>(value: T): OkResult<T, never> {
-    return new ResultImpl<T, never>({ kind: "ok", value }) as OkResult<T, never>
+    return new ResultImpl<T, never>("ok", value) as OkResult<T, never>
   }
 
   /** Construct a failure result with the given value. */
   static err<E>(value: E): ErrResult<never, E> {
-    return new ResultImpl<never, E>({ kind: "err", value }) as ErrResult<
-      never,
-      E
-    >
+    return new ResultImpl<never, E>("err", value) as ErrResult<never, E>
   }
 
   /**
@@ -67,26 +62,28 @@ export class ResultImpl<T, E> {
     }
   }
 
-  readonly contents: R<T, E>
+  readonly kind: "ok" | "err"
+  readonly #value: T | E
 
-  private constructor(contents: R<T, E>) {
-    this.contents = contents
+  private constructor(kind: "ok" | "err", value: T | E) {
+    this.kind = kind
+    this.#value = value
   }
 
-  isOk(): this is { readonly contents: Ok<T> } {
-    return this.contents.kind == "ok"
+  isOk(): this is OkResult<T, E> {
+    return this.kind == "ok"
   }
 
-  isErr(): this is { readonly contents: Err<E> } {
-    return this.contents.kind == "err"
+  isErr(): this is ErrResult<T, E> {
+    return this.kind == "err"
   }
 
-  value(this: { contents: Ok<T> }): T {
-    return this.contents.value
+  value(this: OkResult<T, E>): T {
+    return this.#value as T
   }
 
-  error(this: { contents: Err<E> }): E {
-    return this.contents.value
+  error(this: ErrResult<T, E>): E {
+    return this.#value as E
   }
 
   unwrap(this: Result<T, E>): T {

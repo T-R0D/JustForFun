@@ -8,7 +8,7 @@ export class Dequeue<T> {
   #stop: number
   #size: number
 
-  constructor(initialElements?: Iterable<T>) {
+  constructor(initialElements?: IterableIterator<T>) {
     this.#data =
       initialElements !== undefined
         ? Array.from(initialElements)
