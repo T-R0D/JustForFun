@@ -1,6 +1,8 @@
 import { Stack } from "../queue"
 
-export function* combinations<T>(elements: T[]): IterableIterator<T[]> {
+export function* combinations<T>(
+  elements: T[],
+): IteratorObject<T[], undefined> {
   const stop = (1 << elements.length) - 1
   for (let s = 0; s <= stop; s += 1) {
     const combination = []
@@ -13,7 +15,9 @@ export function* combinations<T>(elements: T[]): IterableIterator<T[]> {
   }
 }
 
-export function* permutations<T>(elements: T[]): IterableIterator<T[]> {
+export function* permutations<T>(
+  elements: T[],
+): IteratorObject<T[], undefined> {
   for (const combination of combinations(elements)) {
     for (const permutation of permute(combination)) {
       yield permutation
@@ -21,7 +25,7 @@ export function* permutations<T>(elements: T[]): IterableIterator<T[]> {
   }
 }
 
-export function* permute<T>(elements: T[]): IterableIterator<T[]> {
+export function* permute<T>(elements: T[]): IteratorObject<T[], undefined> {
   const stack = new Stack<number[]>([[]].values())
   generate: while (stack.size() > 0) {
     const membersOption = stack.pop()

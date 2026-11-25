@@ -8,7 +8,7 @@ export class Dequeue<T> {
   #stop: number
   #size: number
 
-  constructor(initialElements?: IterableIterator<T>) {
+  constructor(initialElements?: Iterable<T>) {
     this.#data =
       initialElements !== undefined
         ? Array.from(initialElements)
@@ -26,7 +26,7 @@ export class Dequeue<T> {
       return
     }
 
-    const newData = Array.from(this.iter())
+    const newData = Array.from(this)
     this.#data = newData
 
     this.#data.push(x)
@@ -48,7 +48,7 @@ export class Dequeue<T> {
     // front, so let's allocate some extra space up front to reduce
     // re-allocations of underlying memory.
     const oldSize = this.size()
-    const newData = [...Array(this.size()).fill(null), x, ...this.iter()]
+    const newData = [...Array(this.size()).fill(null), x, ...this]
     this.#data = newData
 
     // The push is just to make sure we resize the underlying memory allocation if necessary.
@@ -107,7 +107,7 @@ export class Dequeue<T> {
   }
 
   /** Iterates the dequeue in left to right order. */
-  *iter(): Iterable<T> {
+  *[Symbol.iterator](): IteratorObject<T, undefined> {
     for (let i = 0; i < this.size(); i += 1) {
       yield this.#data[
         (this.#start + this.#data.length + i) % this.#data.length

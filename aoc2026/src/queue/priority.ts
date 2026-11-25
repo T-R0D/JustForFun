@@ -6,7 +6,7 @@ export class PriorityQueue<T> {
 
   constructor(
     isHigherPriority: (a: T, b: T) => boolean,
-    initialElements?: IterableIterator<T>,
+    initialElements?: Iterable<T>,
   ) {
     this.#data =
       initialElements !== undefined ? Array.from(initialElements) : []
