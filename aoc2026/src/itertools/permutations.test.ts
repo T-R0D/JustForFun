@@ -3,7 +3,7 @@ import { combinations, permutations, permute } from "./permutations"
 
 describe("combinations", () => {
   it("generates all combinations", () => {
-    const c = [...combinations([1, 2, 3])]
+    const c = combinations([1, 2, 3]).toArray()
 
     expect(c).toEqual(
       expect.arrayContaining([
@@ -23,7 +23,7 @@ describe("combinations", () => {
 
 describe("permutations", () => {
   it("generates all permutations", () => {
-    const c = [...permutations([1, 2, 3])]
+    const c = permutations([1, 2, 3]).toArray()
 
     expect(c).toEqual(
       expect.arrayContaining([
@@ -51,7 +51,7 @@ describe("permutations", () => {
 
 describe("permute", () => {
   it("generates all permutations of a given set of elements", () => {
-    const c = [...permute([1, 2, 3])]
+    const c = permute([1, 2, 3]).toArray()
 
     expect(c).toEqual(
       expect.arrayContaining([

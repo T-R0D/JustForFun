@@ -33,16 +33,16 @@ describe("Dequeue", () => {
   })
 
   it("pushes properly when there's empty slots at the start of the backing array", () => {
-    const d = new Dequeue([4, 5, 6].values())
+    const d = new Dequeue([4, 5, 6])
 
     d.pushFront(3)
     d.push(7)
 
-    expect([...d.iter()]).toEqual([3, 4, 5, 6, 7])
+    expect([...d]).toEqual([3, 4, 5, 6, 7])
   })
 
   it("handles a mix of operation", () => {
-    const d = new Dequeue([4, 5, 6].values())
+    const d = new Dequeue([4, 5, 6])
 
     d.pushFront(3)
     d.pushFront(2)
@@ -52,6 +52,6 @@ describe("Dequeue", () => {
     d.push(8)
     d.push(9)
 
-    expect([...d.iter()]).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    expect([...d]).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9])
   })
 })

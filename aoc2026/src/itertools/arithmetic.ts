@@ -1,7 +1,15 @@
-export function sum(numbers: IterableIterator<number>): number {
-  return Array.from(numbers).reduce((acc, x) => acc + x, 0)
+export function sum(numbers: Iterable<number>): number {
+  return Iterator.from(numbers).reduce((acc, x) => acc + x, 0)
 }
 
-export function product(numbers: IterableIterator<number>): number {
-  return Array.from(numbers).reduce((acc, x) => acc * x, 1)
+export function product(numbers: Iterable<number>): number {
+  return Iterator.from(numbers).reduce((acc, x) => acc * x, 1)
+}
+
+export function bigSum(numbers: Iterable<bigint>): bigint {
+  return Iterator.from(numbers).reduce((acc, x) => acc + x, 0n)
+}
+
+export function bigProduct(numbers: Iterable<bigint>): bigint {
+  return Iterator.from(numbers).reduce((acc, x) => acc * x, 1n)
 }

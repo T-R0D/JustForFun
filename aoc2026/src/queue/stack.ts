@@ -3,7 +3,7 @@ import { Option } from "../monad"
 export class Stack<T> {
   readonly #data: T[]
 
-  constructor(initialElements?: IterableIterator<T>) {
+  constructor(initialElements?: Iterable<T>) {
     this.#data =
       initialElements !== undefined ? Array.from(initialElements) : []
   }
@@ -28,7 +28,7 @@ export class Stack<T> {
   }
 
   /** Iterate the elements in reverse order (the order they will leave the stack). */
-  *iter(): Iterable<T> {
+  *[Symbol.iterator](): Iterable<T> {
     for (let i = this.#data.length - 1; i >= 0; i -= 1) {
       yield this.#data[i] as T
     }
